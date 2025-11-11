@@ -1,2 +1,2 @@
 # Gamelab-SpeedrunGame
-blyat
+Oyun Projesi
