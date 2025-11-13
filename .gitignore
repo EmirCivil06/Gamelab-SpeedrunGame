@@ -102,3 +102,6 @@ ServerData
 .vscode
 *.slnx
 *.vsconfig
+
+# Rider için
+.idea
