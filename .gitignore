@@ -101,3 +101,4 @@ ServerData
 # Visual Studio Solution ve .vscode için
 .vscode
 *.slnx
+*.vsconfig
