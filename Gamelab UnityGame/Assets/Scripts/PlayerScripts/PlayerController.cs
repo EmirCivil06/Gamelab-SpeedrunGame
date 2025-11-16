@@ -18,10 +18,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 5f;
     private float coyoteTime = .1f; // çakılma süresi
     public float inputX;
-    public bool inputY;
 
     private float lastGroundCheckTime;
-    private bool jumpQueued = false;
+    private bool jumpQueued = false; // zıpalama aktive edildi mi kontrol ediyor
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -79,22 +78,20 @@ public class PlayerController : MonoBehaviour
     public void Move(InputAction.CallbackContext context)
     {
         inputX = context.ReadValue<Vector2>().x;
+        PerformMoving();
     }
 
     private void PerformMoving()
     {
-        Vector2 tempVelocity = rb.linearVelocity; 
-        tempVelocity.x = inputX * moveSpeed;
-        rb.linearVelocity = tempVelocity;
+        rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
     }
     private void FixedUpdate()
     {
-        PerformMoving();
+        
     }
 
     public void Jump(InputAction.CallbackContext context)
     {
-        //inputY = context.ReadValue<Vector2>().y;
         if (context.performed)
         {
             PerformJump();
@@ -102,10 +99,7 @@ public class PlayerController : MonoBehaviour
         }
     }
     private void PerformJump(){
-        Vector2 tempVelocity = rb.linearVelocity;
-        if (IsGrounded()) 
-            tempVelocity.y = jumpForce;
-        rb.linearVelocity = tempVelocity;
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
     private bool IsGrounded(){
