@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Container" style="flex-grow: 1;">
+        <ui:Label text="Lama&apos;nın Macerası" name="Header" style="align-items: center; align-self: center; align-content: center; font-size: 50px; color: rgb(255, 255, 255); -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); top: 200px;" />
+        <ui:VisualElement name="ButtonContainer" style="flex-grow: 1; align-items: center; justify-content: center; align-self: center; align-content: center; width: 480px; height: auto; margin-bottom: 0;">
+            <ui:Button text="Oyna" style="font-size: 40px; width: 450px; height: 90px; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; margin-top: 20px; margin-bottom: 20px;" />
+            <ui:Button text="Seçenekler" style="font-size: 40px; width: 450px; height: 90px; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); border-top-left-radius: 40px; border-top-right-radius: 40px; border-bottom-right-radius: 40px; border-bottom-left-radius: 40px; margin-top: 20px; margin-bottom: 10px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
