@@ -1,0 +1,13 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Extra%20Media/Info.uss?fileID=7433441132597879392&amp;guid=af8db40671db6664f9dc5225c2750332&amp;type=3#Info" />
+    <ui:VisualElement name="MainContainer" style="flex-grow: 1; background-color: rgb(0, 0, 0);">
+        <ui:VisualElement name="ImageContainer" style="flex-grow: 1; width: 100%; height: 100%; justify-content: center; flex-direction: row; padding-bottom: 0; background-color: rgba(0, 0, 0, 0);">
+            <ui:VisualElement name="imageOne" class="transition" style="flex-grow: 1; flex-direction: row; background-color: rgb(255, 0, 0);" />
+            <ui:VisualElement name="imageTwo" class="transition" style="flex-grow: 1; flex-direction: row;" />
+            <ui:VisualElement name="imageThree" class="transition" style="flex-grow: 1; flex-direction: row; background-color: rgb(255, 163, 0);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="Text" style="flex-grow: 0.1; height: 5%; flex-shrink: 0.1; background-color: rgb(0, 0, 0);">
+            <ui:Label text="aaaa&#10;" name="Story" class="transition" style="color: rgb(255, 255, 255); font-size: 35px; -unity-text-align: upper-center; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); height: 68px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

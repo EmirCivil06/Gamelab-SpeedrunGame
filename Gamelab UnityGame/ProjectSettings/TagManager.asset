@@ -5,8 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
-  - Enemy
-  - Bullets
+  - UIAudio
   layers:
   - Default
   - TransparentFX
@@ -15,9 +14,9 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Enemy
-  - Player
-  - Bullets
+  - 
+  - 
+  - 
   - 
   - 
   - 

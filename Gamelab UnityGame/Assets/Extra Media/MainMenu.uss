@@ -1,0 +1,12 @@
+:root {
+}
+
+.fade {
+    transition-property: opacity;
+    transition-duration: 0.9s;
+    transition-timing-function: ease-in-out;
+}
+
+.invis {
+    opacity: 0;
+}
