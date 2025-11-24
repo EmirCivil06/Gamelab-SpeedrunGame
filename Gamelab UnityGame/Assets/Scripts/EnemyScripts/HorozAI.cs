@@ -65,66 +65,77 @@ public EnemyType enemyType;
 
     void Attack()
     {
-        // Lama hala g�r��te mi diye kontrol et
+        // CASUS 1: Attack moduna girdik mi?
+        // Debug.Log("1. Attack döngüsü başladı."); 
+
         if (lamaTransform == null)
         {
-            currentState = EnemyState.idle; // Lama yoksa bo�a ge�
+            Debug.Log("HATA: Lama kayboldu! (lamaTransform null)");
+            currentState = EnemyState.idle;
             return;
         }
 
-        // Lama ile aram�zdaki mesafeyi ve y�n� tekrar kontrol edelim
         Vector2 yon = (lamaTransform.position - transform.position).normalized;
+
+        // Burada tekrar Raycast atıyoruz, acaba bu mu başarısız oluyor?
         RaycastHit2D hit = Physics2D.Raycast(transform.position, yon, gorusMesafesi, lamaLayer);
 
-        // E�er ���n art�k Lamaya �arpm�yorsa (araya engel girdi veya uza�a ka�t�)
         if (hit.collider == null || hit.transform != lamaTransform)
         {
-            Debug.Log("Lama g�r��ten kayboldu!");
-            lamaTransform = null; // Laman�n kayd�n� sil
-            currentState = EnemyState.idle; // Bo�a ge�
+            // CASUS 2: İkinci bakışta göremedik
+            Debug.Log("2. Attack içindeki Raycast Lamayı göremedi! Engel var veya açı yanlış.");
+            lamaTransform = null;
+            currentState = EnemyState.idle;
             return;
         }
 
-        // Lama g�r��teyse, ona do�ru d�n
         Turn(yon.x < 0);
 
-        // Sald�r� cooldown'�n� (bekleme s�resi) kontrol et
+        // CASUS 3: Zaman doldu mu?
         if (Time.time >= sonrakiAtisZamani)
         {
-            // Ate� etme zaman� geldi
+            Debug.Log("3. Süre doldu, tetiğe basılıyor!");
             AtesEt();
-            // Sonraki at�� zaman�n� ayarla
             sonrakiAtisZamani = Time.time + saldiriAraligi;
+        }
+        else
+        {
+            // Çok spam yapmasın diye bunu kapalı tutabilirsin
+            // Debug.Log("Cooldown bekleniyor...");
         }
     }
 
     void AtesEt()
     {
-        GameObject mermiPrefab;
+        GameObject mermiPrefab = null;
 
-        // Hangi horoz oldu�umuza bak�p do�ru mermiyi se�elim
+        // Hangi mermiyi atacağız?
         if (enemyType == EnemyType.normalHoroz)
-        {
             mermiPrefab = okeyTasiPrefab;
-        }
-        else // (tipi == HorozTipi.Bornozlu)
-        {
+        else
             mermiPrefab = ps5KoluPrefab;
-        }
 
         if (mermiPrefab != null && atesNoktasi != null)
         {
-            // Mermiyi (prefab�) "Ate� Noktas�" pozisyonunda yarat
+            // 1. Mermiyi Yarat
             GameObject mermi = Instantiate(mermiPrefab, atesNoktasi.position, Quaternion.identity);
 
-            // Mermiye h�z ver (Lama'ya do�ru)
-            // (E�er mermilerin kendi script'i olacaksa bu k�s�m de�i�ebilir)
+            // 2. Merminin üzerindeki Rigidbody2D'yi bul (Fizik motoru)
             Rigidbody2D rb = mermi.GetComponent<Rigidbody2D>();
-            if (rb != null)
+
+            if (rb != null && lamaTransform != null)
             {
+                // 3. Yönü Hesapla (Hedefin pozisyonu - Ateş noktasının pozisyonu)
                 Vector2 yon = (lamaTransform.position - atesNoktasi.position).normalized;
-                float mermiHizi = 10f; // Mermi h�z�n� buradan ayarla
+
+                float mermiHizi = 10f; // Hızı buradan değiştirebilirsin
+
+                // 4. Hızı Ver (Unity 6 için linearVelocity, eskiler için velocity)
                 rb.linearVelocity = yon * mermiHizi;
+            }
+            else
+            {
+                Debug.LogError("HATA: Mermi prefabında Rigidbody2D YOK veya Lama kayıp!");
             }
         }
     }
@@ -135,19 +146,33 @@ public EnemyType enemyType;
         }
     }//diger tarafa donduruyo
 
-    void LamayiAra() {
-    
-    Vector2 yon = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+    void LamayiAra()
+    {
 
-        // I��n� at ve neye �arpt���na bak
+        // Yönü belirle
+        Vector2 yon = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+
+        // --- HATA AYIKLAMA ÇİZGİSİ (Scene ekranında KIRMIZI bir çizgi çizer) ---
+        // Oyun çalışırken Scene sekmesine geçip Horoz'a bak, kırmızı çizgiyi gör.
+        Debug.DrawRay(transform.position, yon * gorusMesafesi, Color.red);
+        // -----------------------------------------------------------------------
+
+        // Işını at
         RaycastHit2D hit = Physics2D.Raycast(transform.position, yon, gorusMesafesi, lamaLayer);
 
-        // E�er ���n bir �eye �arpt�ysa VE �arpt��� �ey "Lama" ise
+        // Bir şeye çarptı mı?
         if (hit.collider != null)
         {
-            Debug.Log("Lama g�r�ld�!");
-            lamaTransform = hit.transform; // Laman�n yerini kaydet
-            currentState = EnemyState.attack; // Sald�r� moduna ge�
+            // Konsola neye çarptığını yazdıralım.
+            // Eğer "Lama" yazıyorsa ama saldırmıyorsa sorun koddadır.
+            // Eğer "Horoz" (kendisi) yazıyorsa sorun ayardadır.
+            Debug.Log("Horoz şuna bakıyor: " + hit.collider.name);
+
+            lamaTransform = hit.transform;
+
+            // LayerMask kullandığımız için tekrar tag kontrolüne gerek yok ama emin olalım
+            // (Burada Player tag'ine sahip mi diye de bakabilirsin ekstra güvenlik için)
+            currentState = EnemyState.attack;
         }
     }
 

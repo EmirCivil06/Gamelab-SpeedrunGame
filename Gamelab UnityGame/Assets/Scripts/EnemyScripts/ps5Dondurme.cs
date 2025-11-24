@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ps5Dondurme : MonoBehaviour
 {
-    public float donmeHizi = 360f;  //saniyede 360 derece
+    public float donmeHizi = -60f;  //saniyede 360 derece
 
     void Update()
     {
