@@ -655,7 +655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   groundCheck: {fileID: 798706266}
-  groundCheckRadius: 2.1
+  groundCheckRadius: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
