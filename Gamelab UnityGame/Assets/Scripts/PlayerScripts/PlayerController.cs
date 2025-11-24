@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = .1f;
+    [SerializeField] private float groundCheckRadius = 2f;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Movement")]
@@ -16,11 +16,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private InputAction _move, _jump;
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
-    private float coyoteTime = .1f; // çakılma süresi
+    private float coyoteTime = .8f; // çakılma süresi
     public float inputX;
 
     private float lastGroundCheckTime;
-    private bool jumpQueued = false; // zıpalama aktive edildi mi kontrol ediyor
+    private int jumpCount; 
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,15 +51,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnJumpStarted(InputAction.CallbackContext context){
-        jumpQueued = true;
-        Debug.Log("Jump Queued");
+        //Debug.Log("Jump Queued");
     }
 
     void OnJumpCanceled(InputAction.CallbackContext context){
         if (rb.linearVelocity.y > 0f){
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         }
-        Debug.Log("Jump Canceled");
+        //Debug.Log("Jump Canceled");
     }
 
     // Update is called once per frame
@@ -68,10 +67,8 @@ public class PlayerController : MonoBehaviour
         if (IsGrounded()){
             lastGroundCheckTime = Time.time;
         }
-        if (jumpQueued && (IsGrounded() || Time.time - lastGroundCheckTime > coyoteTime)){
-            PerformJump();
-            jumpQueued = false;
-            Debug.Log("Jump Queued over");
+        if (jumpCount!=0 && IsGrounded()){
+            jumpCount = 0;
         }
     }
 
@@ -92,9 +89,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        // Double jump sadece coyote time içersinde aktif oluyor. uzun süre beklenirse double jump yapılamıyor.
+        if (context.performed && Time.time - lastGroundCheckTime < coyoteTime && jumpCount < 2)
         {
             PerformJump();
+            jumpCount++;
             Debug.Log("Jumping action");
         }
     }
