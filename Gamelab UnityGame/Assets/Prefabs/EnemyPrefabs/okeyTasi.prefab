@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2849094886862548927}
   - component: {fileID: -621665299057109795}
   - component: {fileID: 8966926537891315576}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: okeyTasi
   m_TagString: Bullets
   m_Icon: {fileID: 0}
