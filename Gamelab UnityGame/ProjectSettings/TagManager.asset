@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Ground
   - UIAudio
+  - Undefined
+  - Bullets
+  - Enemies
   layers:
   - Default
   - TransparentFX
@@ -14,9 +17,9 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
-  - 
-  - 
+  - Player
+  - Bullets
+  - Enemies
   - 
   - 
   - 
