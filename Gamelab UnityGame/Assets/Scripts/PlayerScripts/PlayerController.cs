@@ -66,18 +66,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         if (IsGrounded()){
-            Debug.Log("grounded");
             lastGroundCheckTime = Time.time;
         }
-        else
-        {
-            Debug.Log("not grounded");
-        }
-
-        if (jumpQueued && (IsGrounded() || Time.time - lastGroundCheckTime < coyoteTime)){
+        if (jumpQueued && (IsGrounded() || Time.time - lastGroundCheckTime > coyoteTime)){
             PerformJump();
             jumpQueued = false;
-            //Debug.Log("Jump Queued over");
+            Debug.Log("Jump Queued over");
         }
     }
 
@@ -101,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (context.performed)
         {
             PerformJump();
-            //Debug.Log("Jumping action");
+            Debug.Log("Jumping action");
         }
     }
     private void PerformJump(){
@@ -109,7 +103,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private bool IsGrounded(){
+        if (!groundCheck) return false;
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
+
 
 }
