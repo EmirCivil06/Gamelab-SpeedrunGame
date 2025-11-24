@@ -1,2 +1,1 @@
 # Gamelab-SpeedrunGame
-blyat
