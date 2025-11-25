@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 2f;
+    [SerializeField] private float groundCheckRadius = 3f;
     [SerializeField] private LayerMask groundLayer;
 
     [Header("Movement")]
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if (rb.linearVelocity.y > 0f){
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         }
-        //Debug.Log("Jump Canceled");
+        
     }
 
     // Update is called once per frame
@@ -66,6 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded()){
             lastGroundCheckTime = Time.time;
+            Debug.Log("Grounded");
         }
         if (jumpCount!=0 && IsGrounded()){
             jumpCount = 0;
