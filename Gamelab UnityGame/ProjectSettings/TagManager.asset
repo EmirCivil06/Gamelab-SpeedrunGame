@@ -9,6 +9,7 @@ TagManager:
   - Undefined
   - Bullets
   - Enemies
+  - UI
   layers:
   - Default
   - TransparentFX
