@@ -22,7 +22,7 @@ public class StartMenuEvents : MonoBehaviour
         _options = mainMenuDocument.rootVisualElement.Q("Settings") as Button;
         _quit = mainMenuDocument.rootVisualElement.Q("Quit") as Button;
         fadeScreen = mainMenuDocument.rootVisualElement.Q("FadeScreen");
-        Invoke("FadeIn", 0.5f);
+        Invoke("FadeIn", 0.7f);
 
         _start.RegisterCallback<ClickEvent>(OnStartClick);
         _options.RegisterCallback<ClickEvent>(OnOptionsClick);
