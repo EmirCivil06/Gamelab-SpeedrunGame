@@ -5,11 +5,14 @@ public class PlayerController : MonoBehaviour
 {
     
     private Rigidbody2D rb;
+    public Animator animator;
+    public SpriteRenderer SpriteRenderer;
 
     [Header("Ground Check")]
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private float groundCheckRadius = 2f;
+    [SerializeField] private float groundCheckRadius = 3f;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private bool isGrounded;
 
     [Header("Movement")]
     [SerializeField] private PlayerInput _input;
@@ -27,6 +30,8 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         _input = GetComponent<PlayerInput>();
+        animator = GetComponent<Animator>();
+        SpriteRenderer = GetComponent<SpriteRenderer>();
         
         
     }
@@ -58,7 +63,7 @@ public class PlayerController : MonoBehaviour
         if (rb.linearVelocity.y > 0f){
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         }
-        //Debug.Log("Jump Canceled");
+        
     }
 
     // Update is called once per frame
@@ -66,6 +71,7 @@ public class PlayerController : MonoBehaviour
     {
         if (IsGrounded()){
             lastGroundCheckTime = Time.time;
+            //Debug.Log("Grounded");
         }
         if (jumpCount!=0 && IsGrounded()){
             jumpCount = 0;
@@ -80,7 +86,14 @@ public class PlayerController : MonoBehaviour
 
     private void PerformMoving()
     {
+        if (inputX < 0){
+            SpriteRenderer.flipX = false;
+        }
+        else if (inputX > 0){
+            SpriteRenderer.flipX = true;
+        }
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
+        animator.SetFloat("HorizontalMove", Mathf.Abs(inputX));
     }
     private void FixedUpdate()
     {
@@ -101,8 +114,10 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
     }
 
-    private bool IsGrounded(){
+    
+    public bool IsGrounded(){
         if (!groundCheck) return false;
+        isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
     }
 

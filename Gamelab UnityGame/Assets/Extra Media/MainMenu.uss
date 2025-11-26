@@ -10,3 +10,11 @@
 .invis {
     opacity: 0;
 }
+
+.button:hover {
+    scale: 1.075 1.075;
+}
+
+.button:active {
+    scale: 0.925 0.925;
+}
