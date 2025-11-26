@@ -9412,7 +9412,7 @@ PrefabInstance:
       objectReference: {fileID: 952877267}
     - target: {fileID: 2200807241125412431, guid: 51d2263e0996cb74ba5f80c21277286f, type: 3}
       propertyPath: m_DefaultActionMap
-      value: df70fa95-8a34-4494-b137-73ab6b9c7d37
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5499110932319462014, guid: 51d2263e0996cb74ba5f80c21277286f, type: 3}
       propertyPath: groundCheck
@@ -9422,6 +9422,10 @@ PrefabInstance:
       propertyPath: groundCheckRadius
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 6380228550706262061, guid: 51d2263e0996cb74ba5f80c21277286f, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: ad7264b989a1435459f218664e3aaaa2, type: 2}
     - target: {fileID: 8108790846132507886, guid: 51d2263e0996cb74ba5f80c21277286f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.45
@@ -9487,6 +9491,7 @@ GameObject:
   - component: {fileID: 952877267}
   - component: {fileID: 952877266}
   - component: {fileID: 952877269}
+  - component: {fileID: 952877270}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9612,6 +9617,21 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &952877270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952877265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b146110bf1feba0489270b51e2a27f64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraControl
+  target: {fileID: 872519115}
+  offset: {x: 0, y: 0, z: -10}
+  smoothTime: 0.2
 --- !u!1 &1245614979
 GameObject:
   m_ObjectHideFlags: 0

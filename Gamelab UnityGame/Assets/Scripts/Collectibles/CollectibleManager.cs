@@ -17,7 +17,6 @@ public class CollectibleManager : MonoBehaviour
     {
         if (Instance != null && Instance != this)
         {
-            Debug.LogWarning($"Multiple {nameof(CollectibleManager)} instances detected in the scene. Destroying the newest one.", this);
             Destroy(this);
             return;
         }
