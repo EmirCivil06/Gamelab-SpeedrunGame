@@ -6,8 +6,6 @@ public class Collectible : MonoBehaviour
     [SerializeField]
     private int scoreValue = 1;
 
-    [SerializeField]
-    private bool destroyOnCollect = true;
 
     private Collider2D _collider;
 
