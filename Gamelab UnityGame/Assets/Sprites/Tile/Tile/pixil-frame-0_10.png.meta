@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 105816da8322ed642a659bb4324c0a47
+guid: 791fd879497632e4694d62811cc3d4b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1579643907422738538
-    second: semo_0
+      213: -3265351471760134817
+    second: pixil-frame-0_10_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: semo_0
+      name: pixil-frame-0_10_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,14 +115,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a68da85b3c50ce510800000000000000
-      internalID: 1579643907422738538
+      spriteID: f5d20f213242fa2d0800000000000000
+      internalID: -3265351471760134817
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_1
+      name: pixil-frame-0_10_1
       rect:
         serializedVersion: 2
         x: 32
@@ -137,14 +137,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4fbdd1b4ed8c204cb48897095beb991
-      internalID: -1275238797
+      spriteID: b113f08ac0446474ca37f951cbbadf0f
+      internalID: 1435947491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_2
+      name: pixil-frame-0_10_2
       rect:
         serializedVersion: 2
         x: 64
@@ -159,14 +159,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de8c7bd2933103a44a68c8b40de5b4e7
-      internalID: 1598980756
+      spriteID: 388ef63aa3e7b6447ba532c58d6179fc
+      internalID: 1895304494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_3
+      name: pixil-frame-0_10_3
       rect:
         serializedVersion: 2
         x: 96
@@ -181,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 098b8be7ee54c58479d0e238276146b6
-      internalID: 1686483599
+      spriteID: 9c26f0e082f58a547919fe5915ce8a14
+      internalID: -877771449
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_4
+      name: pixil-frame-0_10_4
       rect:
         serializedVersion: 2
         x: 0
@@ -203,14 +203,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71aaf60e008d64e4a9dbbca88f830700
-      internalID: -874089655
+      spriteID: 71769c3154d8ae6458151c0ba6e1ccda
+      internalID: 1809684125
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_5
+      name: pixil-frame-0_10_5
       rect:
         serializedVersion: 2
         x: 32
@@ -225,14 +225,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7e39cdb856ba05d48af526b40ff651f5
-      internalID: 2114245990
+      spriteID: 01aa9680429c91a4db95859b285e9ec7
+      internalID: 1253694727
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_6
+      name: pixil-frame-0_10_6
       rect:
         serializedVersion: 2
         x: 64
@@ -247,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 820a23c4d0726a541bc58236df5c068b
-      internalID: 1678710861
+      spriteID: 688d9d5b22d9d354cafc27ec718d7746
+      internalID: -1036635129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_7
+      name: pixil-frame-0_10_7
       rect:
         serializedVersion: 2
         x: 96
@@ -269,14 +269,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc2152b0beb8de34bbaab9056de0f6ba
-      internalID: -524538522
+      spriteID: 928c4161f8e568d4590f2439957191f5
+      internalID: 136846018
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_8
+      name: pixil-frame-0_10_8
       rect:
         serializedVersion: 2
         x: 0
@@ -291,14 +291,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29209b9d2d8b6f649aa374fdb4438166
-      internalID: 181244150
+      spriteID: fb65d43585f26da4db62565a31f75c37
+      internalID: 1298994233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_9
+      name: pixil-frame-0_10_9
       rect:
         serializedVersion: 2
         x: 32
@@ -313,14 +313,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 987d06cf15b469a49a4b1a7490a7c815
-      internalID: 735403728
+      spriteID: d9d4bc75b46821b4da810b79ca11acd9
+      internalID: 883902167
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_10
+      name: pixil-frame-0_10_10
       rect:
         serializedVersion: 2
         x: 64
@@ -335,14 +335,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d3cabbb53c3a0f4488c24df6168a2ec2
-      internalID: 229473331
+      spriteID: 23e5be1844940724eae0914da51ab35f
+      internalID: 265322658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_11
+      name: pixil-frame-0_10_11
       rect:
         serializedVersion: 2
         x: 96
@@ -357,14 +357,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e829629cb331cf04a8935341631d20ec
-      internalID: -1191577103
+      spriteID: 21bfeaf900dd15d4eb6875eab32ab7a4
+      internalID: -1267411049
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_12
+      name: pixil-frame-0_10_12
       rect:
         serializedVersion: 2
         x: 0
@@ -379,14 +379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 199e2d7ebc8a2ff41aaf8b1f885ea265
-      internalID: 209088699
+      spriteID: e6fb40a6345c6e9459e64657067151e3
+      internalID: 120470676
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_13
+      name: pixil-frame-0_10_13
       rect:
         serializedVersion: 2
         x: 32
@@ -401,14 +401,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa36c8a519f3b2458621e7c942fa610
-      internalID: -1715728632
+      spriteID: cecab97f3b1bb8741b5c9b069996f1d9
+      internalID: 1634677011
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_14
+      name: pixil-frame-0_10_14
       rect:
         serializedVersion: 2
         x: 64
@@ -423,14 +423,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3feb72d85fcf5704a92de60718de3deb
-      internalID: -264663007
+      spriteID: 8929cd561bdc4e449a21aaf7d27bb7ee
+      internalID: -637120895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: semo_15
+      name: pixil-frame-0_10_15
       rect:
         serializedVersion: 2
         x: 96
@@ -445,8 +445,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d36c379a6c5f9a04bbae9848d89ba177
-      internalID: -209893307
+      spriteID: 2a0a0fb6713fef7428604d5439b46d96
+      internalID: -214251300
       vertices: []
       indices: 
       edges: []
@@ -455,7 +455,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 82d5b0ade3f6e5d408feea9553ed43bb
+    spriteID: f1f203b929a06a34e9a7e59b63b37aff
     internalID: 0
     vertices: []
     indices: 
@@ -467,22 +467,22 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      semo_0: 1579643907422738538
-      semo_1: -1275238797
-      semo_10: 229473331
-      semo_11: -1191577103
-      semo_12: 209088699
-      semo_13: -1715728632
-      semo_14: -264663007
-      semo_15: -209893307
-      semo_2: 1598980756
-      semo_3: 1686483599
-      semo_4: -874089655
-      semo_5: 2114245990
-      semo_6: 1678710861
-      semo_7: -524538522
-      semo_8: 181244150
-      semo_9: 735403728
+      pixil-frame-0_10_0: -3265351471760134817
+      pixil-frame-0_10_1: 1435947491
+      pixil-frame-0_10_10: 265322658
+      pixil-frame-0_10_11: -1267411049
+      pixil-frame-0_10_12: 120470676
+      pixil-frame-0_10_13: 1634677011
+      pixil-frame-0_10_14: -637120895
+      pixil-frame-0_10_15: -214251300
+      pixil-frame-0_10_2: 1895304494
+      pixil-frame-0_10_3: -877771449
+      pixil-frame-0_10_4: 1809684125
+      pixil-frame-0_10_5: 1253694727
+      pixil-frame-0_10_6: -1036635129
+      pixil-frame-0_10_7: 136846018
+      pixil-frame-0_10_8: 1298994233
+      pixil-frame-0_10_9: 883902167
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
