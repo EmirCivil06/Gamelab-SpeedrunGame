@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: -9048500198924120991}
   - component: {fileID: 5286010438915491465}
   - component: {fileID: -1818850754547681654}
+  - component: {fileID: 3215355290895006713}
   m_Layer: 9
-  m_Name: horoz
+  m_Name: BornozluHoroz
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,13 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8f5c17e3f0cc4f8381948db261e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HorozAI
-  enemyType: 0
+  enemyType: 1
   currentState: 0
   movementSpeed: 3
   gorusMesafesi: 10
   lamaLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 384
   atesNoktasi: {fileID: 7714824942572918160}
   okeyTasiPrefab: {fileID: 777116842526959335, guid: 6e5ed9c8a625d8b429069e37b2b14d4f, type: 3}
   ps5KoluPrefab: {fileID: 8277510084925365822, guid: 8eaeb5c613452e743ad9cb83c384e59f, type: 3}
@@ -190,6 +191,28 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &3215355290895006713
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1629144002489210425}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97dcb364c74ee7f4fae429f8767d9b75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7559681289602501042
 GameObject:
   m_ObjectHideFlags: 0
