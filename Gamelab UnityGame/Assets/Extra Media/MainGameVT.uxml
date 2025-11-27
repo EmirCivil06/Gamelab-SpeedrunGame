@@ -1,0 +1,7 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Extra%20Media/MainGameUI.uss?fileID=7433441132597879392&amp;guid=32666776a141f0f47b74b859b69e1964&amp;type=3#MainGameUI" />
+    <ui:VisualElement name="ScoreLabel" style="flex-grow: 1; flex-direction: row; justify-content: flex-start;">
+        <ui:Label text="Skor:" class="label" />
+        <ui:Label text="0" class="label" />
+    </ui:VisualElement>
+</ui:UXML>
