@@ -30,6 +30,7 @@ public EnemyType enemyType;
 
     public float saldiriAraligi = 2f;     // Saniyede ka� kez ate� edece�i
     private float sonrakiAtisZamani = 0f; // Cooldown sayac�
+    private Animator animator;
 
     private Transform lamaTransform; //lama konumu
 
@@ -38,6 +39,8 @@ public EnemyType enemyType;
         currentState = EnemyState.idle;
 
         //targetPoint = pointB;
+
+        animator = GetComponentInChildren<Animator>();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
@@ -107,6 +110,12 @@ public EnemyType enemyType;
 
     void AtesEt()
     {
+        if (animator != null)
+        {
+            // Animator penceresindeki "Saldir" trigger'ını çalıştırır
+            animator.SetTrigger("Saldir");
+        }
+
         GameObject mermiPrefab = null;
 
         // Hangi mermiyi atacağız?
@@ -149,29 +158,17 @@ public EnemyType enemyType;
     void LamayiAra()
     {
 
-        // Yönü belirle
         Vector2 yon = spriteRenderer.flipX ? Vector2.left : Vector2.right;
 
-        // --- HATA AYIKLAMA ÇİZGİSİ (Scene ekranında KIRMIZI bir çizgi çizer) ---
-        // Oyun çalışırken Scene sekmesine geçip Horoz'a bak, kırmızı çizgiyi gör.
-        Debug.DrawRay(transform.position, yon * gorusMesafesi, Color.red);
-        // -----------------------------------------------------------------------
-
-        // Işını at
         RaycastHit2D hit = Physics2D.Raycast(transform.position, yon, gorusMesafesi, lamaLayer);
 
-        // Bir şeye çarptı mı?
         if (hit.collider != null)
         {
-            // Konsola neye çarptığını yazdıralım.
-            // Eğer "Lama" yazıyorsa ama saldırmıyorsa sorun koddadır.
-            // Eğer "Horoz" (kendisi) yazıyorsa sorun ayardadır.
+        
             Debug.Log("Horoz şuna bakıyor: " + hit.collider.name);
 
             lamaTransform = hit.transform;
 
-            // LayerMask kullandığımız için tekrar tag kontrolüne gerek yok ama emin olalım
-            // (Burada Player tag'ine sahip mi diye de bakabilirsin ekstra güvenlik için)
             currentState = EnemyState.attack;
         }
     }
