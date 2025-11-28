@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HorozAI : MonoBehaviour {
@@ -22,17 +23,21 @@ public EnemyType enemyType;
     */
     public float movementSpeed = 3f;
     private SpriteRenderer spriteRenderer;
-    public float gorusMesafesi = 10f;      // Lamay� ne kadar uzaktan g�rebilece�i
-    public LayerMask lamaLayer;           // Lamay� filtrelemek i�in (Inspector'dan "Player" layer'�n� se�)
-    public Transform atesNoktasi;         // Merminin ��kaca�� yer (Horozun elinin ucu gibi)
+    public float gorusMesafesi = 10f;
+    public float duymaMesafesi = 3f;
+    public float mermiGecikmesi = 0.3f;
+
+    public LayerMask lamaLayer;           
+    public Transform atesNoktasi;         
     public GameObject okeyTasiPrefab;
     public GameObject ps5KoluPrefab;
 
-    public float saldiriAraligi = 2f;     // Saniyede ka� kez ate� edece�i
-    private float sonrakiAtisZamani = 0f; // Cooldown sayac�
+    public float saldiriAraligi = 2f;     
+    private float sonrakiAtisZamani = 0f;
+    public float tepkiSuresi = 0.5f;
     private Animator animator;
 
-    private Transform lamaTransform; //lama konumu
+    private Transform lamaTransform; 
 
 
     void Start(){
@@ -42,11 +47,13 @@ public EnemyType enemyType;
 
         animator = GetComponentInChildren<Animator>();
 
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        if (spriteRenderer != null) {
+        if (spriteRenderer == null) {
         Debug.Log("horozun spriterenderer'i yok kingo.");
         }
+
+        animator.Play(0, -1, Random.Range(0f, 1f));
     }
 
     private void Update()
@@ -68,111 +75,102 @@ public EnemyType enemyType;
 
     void Attack()
     {
-        // CASUS 1: Attack moduna girdik mi?
-        // Debug.Log("1. Attack döngüsü başladı."); 
-
         if (lamaTransform == null)
         {
-            Debug.Log("HATA: Lama kayboldu! (lamaTransform null)");
             currentState = EnemyState.idle;
             return;
         }
 
         Vector2 yon = (lamaTransform.position - transform.position).normalized;
-
-        // Burada tekrar Raycast atıyoruz, acaba bu mu başarısız oluyor?
+        Turn(yon.x < 0);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, yon, gorusMesafesi, lamaLayer);
 
         if (hit.collider == null || hit.transform != lamaTransform)
         {
-            // CASUS 2: İkinci bakışta göremedik
-            Debug.Log("2. Attack içindeki Raycast Lamayı göremedi! Engel var veya açı yanlış.");
             lamaTransform = null;
             currentState = EnemyState.idle;
             return;
         }
 
-        Turn(yon.x < 0);
-
-        // CASUS 3: Zaman doldu mu?
         if (Time.time >= sonrakiAtisZamani)
         {
-            Debug.Log("3. Süre doldu, tetiğe basılıyor!");
             AtesEt();
             sonrakiAtisZamani = Time.time + saldiriAraligi;
-        }
-        else
-        {
-            // Çok spam yapmasın diye bunu kapalı tutabilirsin
-            // Debug.Log("Cooldown bekleniyor...");
         }
     }
 
     void AtesEt()
     {
-        if (animator != null)
-        {
-            // Animator penceresindeki "Saldir" trigger'ını çalıştırır
-            animator.SetTrigger("Saldir");
+        StartCoroutine(AtesEtmeIslemi());
+    }
+
+    System.Collections.IEnumerator AtesEtmeIslemi() {
+
+        if (animator != null) {
+            animator.SetTrigger("Attack");
         }
+
+        yield return new WaitForSeconds(mermiGecikmesi);
 
         GameObject mermiPrefab = null;
 
-        // Hangi mermiyi atacağız?
         if (enemyType == EnemyType.normalHoroz)
             mermiPrefab = okeyTasiPrefab;
         else
             mermiPrefab = ps5KoluPrefab;
 
-        if (mermiPrefab != null && atesNoktasi != null)
-        {
-            // 1. Mermiyi Yarat
+        if (mermiPrefab != null && atesNoktasi != null) {
             GameObject mermi = Instantiate(mermiPrefab, atesNoktasi.position, Quaternion.identity);
 
-            // 2. Merminin üzerindeki Rigidbody2D'yi bul (Fizik motoru)
             Rigidbody2D rb = mermi.GetComponent<Rigidbody2D>();
 
-            if (rb != null && lamaTransform != null)
-            {
-                // 3. Yönü Hesapla (Hedefin pozisyonu - Ateş noktasının pozisyonu)
+            if (rb != null && lamaTransform != null) {
+
                 Vector2 yon = (lamaTransform.position - atesNoktasi.position).normalized;
-
-                float mermiHizi = 10f; // Hızı buradan değiştirebilirsin
-
-                // 4. Hızı Ver (Unity 6 için linearVelocity, eskiler için velocity)
+                float mermiHizi = 10f;
                 rb.linearVelocity = yon * mermiHizi;
-            }
-            else
-            {
-                Debug.LogError("HATA: Mermi prefabında Rigidbody2D YOK veya Lama kayıp!");
             }
         }
     }
 
     void Turn (bool facingLeft) {
-        if (spriteRenderer != null) {
-            spriteRenderer.flipX = facingLeft;
+
+        if (facingLeft)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
         }
-    }//diger tarafa donduruyo
+
+        else {
+
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+        }
+    }
 
     void LamayiAra()
     {
+        Collider2D arkaHit = Physics2D.OverlapCircle(transform.position, duymaMesafesi, lamaLayer);
 
-        Vector2 yon = spriteRenderer.flipX ? Vector2.left : Vector2.right;
+        if (arkaHit != null) {
+            TespitEt(arkaHit.transform);
+            return;
+        }
+
+
+        Vector2 yon = -transform.right;
 
         RaycastHit2D hit = Physics2D.Raycast(transform.position, yon, gorusMesafesi, lamaLayer);
 
         if (hit.collider != null)
         {
-        
-            Debug.Log("Horoz şuna bakıyor: " + hit.collider.name);
-
-            lamaTransform = hit.transform;
-
-            currentState = EnemyState.attack;
+            TespitEt(hit.transform);
         }
     }
 
+    void TespitEt(Transform hedef) {
+        lamaTransform = hedef;
+        sonrakiAtisZamani = Time.time + tepkiSuresi;
+        currentState = EnemyState.attack;
+    }
 
     /*void Patrol()
   {

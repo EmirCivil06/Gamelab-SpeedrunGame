@@ -32,7 +32,7 @@ public class bullet : MonoBehaviour
         }*/
 
         // Diðer bir ihtimalle baþka mermiye veya düþmana çarparsa da yok olsun diyebiliriz.
-         else if (other.CompareTag("Enemy") || other.CompareTag("Bullet"))
+         else if (other.CompareTag("Enemies") || other.CompareTag("Bullets"))
          {
              Destroy(gameObject);
          }
