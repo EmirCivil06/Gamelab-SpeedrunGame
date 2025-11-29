@@ -336,7 +336,7 @@ MonoBehaviour:
   groundCheck: {fileID: 2902268770485494465}
   groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
 --- !u!1 &9050925416902545421
 GameObject:
   m_ObjectHideFlags: 0

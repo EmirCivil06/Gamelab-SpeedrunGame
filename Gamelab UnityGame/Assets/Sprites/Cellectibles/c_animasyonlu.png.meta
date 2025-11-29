@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: a1eac52abfc990349bd773c1280d9f19
+guid: 2632d2f43cfc5fb408b1e173d54f83fd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7063819585010422551
-    second: walkin-l_0
+      213: 5454619182621683084
+    second: c_animasyonlu_0
   - first:
-      213: 5030005761666979308
-    second: walkin-l_1
+      213: 8201245802053384678
+    second: c_animasyonlu_1
   - first:
-      213: -3522334527987518853
-    second: walkin-l_2
+      213: 1603250902534997028
+    second: c_animasyonlu_2
   - first:
-      213: -8189412620003487160
-    second: walkin-l_3
+      213: -1448352956585974494
+    second: c_animasyonlu_3
   - first:
-      213: -4663615250762882673
-    second: walkin-l_4
+      213: 8442727522477563370
+    second: c_animasyonlu_4
   - first:
-      213: -7034488572986237041
-    second: walkin-l_5
+      213: -1518452482833409507
+    second: c_animasyonlu_5
   - first:
-      213: 8660425906151298858
-    second: walkin-l_6
+      213: 463888209715179568
+    second: c_animasyonlu_6
   - first:
-      213: -5600740403278717930
-    second: walkin-l_7
+      213: -7915657795442426348
+    second: c_animasyonlu_7
   - first:
-      213: 9176099198678699943
-    second: walkin-l_8
+      213: 2187960512124752251
+    second: c_animasyonlu_8
   - first:
-      213: 4578709724226487542
-    second: walkin-l_9
+      213: -9156649992898862884
+    second: c_animasyonlu_9
   - first:
-      213: 3205953903517793681
-    second: walkin-l_10
+      213: 3892681251001752042
+    second: c_animasyonlu_10
   - first:
-      213: -4449862937998777734
-    second: walkin-l_11
+      213: -15008377593633718
+    second: c_animasyonlu_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -105,8 +105,8 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
-    resizeAlgorithm: 1
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
@@ -133,13 +133,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: walkin-l_0
+      name: c_animasyonlu_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 9
-        width: 34
-        height: 47
+        x: 5
+        y: 97
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,20 +148,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9eca10e538548fd90800000000000000
-      internalID: -7063819585010422551
+      spriteID: c8d623d2f33b2bb40800000000000000
+      internalID: 5454619182621683084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_1
+      name: c_animasyonlu_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 4
-        width: 24
-        height: 57
+        x: 37
+        y: 97
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,20 +170,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ce51452179b2ec540800000000000000
-      internalID: 5030005761666979308
+      spriteID: 6e93e0bda9da0d170800000000000000
+      internalID: 8201245802053384678
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_2
+      name: c_animasyonlu_2
       rect:
         serializedVersion: 2
-        x: 148
-        y: 4
-        width: 24
-        height: 55
+        x: 69
+        y: 97
+        width: 22
+        height: 31
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b72f53fa8672e1fc0800000000000000
-      internalID: -3522334527987518853
+      spriteID: 4244c639334ef3610800000000000000
+      internalID: 1603250902534997028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_3
+      name: c_animasyonlu_3
       rect:
         serializedVersion: 2
-        x: 209
-        y: 4
-        width: 24
-        height: 57
+        x: 5
+        y: 64
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,20 +214,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 84257998c9c595e80800000000000000
-      internalID: -8189412620003487160
+      spriteID: 2256e41e8aa66ebe0800000000000000
+      internalID: -1448352956585974494
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_4
+      name: c_animasyonlu_4
       rect:
         serializedVersion: 2
-        x: 277
-        y: 4
-        width: 24
-        height: 55
+        x: 37
+        y: 64
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,20 +236,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f812f2963a2874fb0800000000000000
-      internalID: -4663615250762882673
+      spriteID: aed50b043f79a2570800000000000000
+      internalID: 8442727522477563370
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_5
+      name: c_animasyonlu_5
       rect:
         serializedVersion: 2
-        x: 337
-        y: 4
-        width: 24
-        height: 56
+        x: 69
+        y: 64
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,20 +258,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f8f5c96c9e9706e90800000000000000
-      internalID: -7034488572986237041
+      spriteID: d1a9760138f5deae0800000000000000
+      internalID: -1518452482833409507
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_6
+      name: c_animasyonlu_6
       rect:
         serializedVersion: 2
-        x: 404
-        y: 4
-        width: 24
-        height: 55
+        x: 5
+        y: 31
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a271dbb0a73003870800000000000000
-      internalID: 8660425906151298858
+      spriteID: 030b0937edf007600800000000000000
+      internalID: 463888209715179568
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_7
+      name: c_animasyonlu_7
       rect:
         serializedVersion: 2
-        x: 465
-        y: 4
-        width: 24
-        height: 57
+        x: 5
+        y: 0
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,20 +302,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 61cd467f64c2642b0800000000000000
-      internalID: -5600740403278717930
+      spriteID: 41e3a1b8c2fe52290800000000000000
+      internalID: -7915657795442426348
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_8
+      name: c_animasyonlu_8
       rect:
         serializedVersion: 2
-        x: 533
-        y: 4
-        width: 24
-        height: 55
+        x: 37
+        y: 31
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,20 +324,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7af8df8aa9d085f70800000000000000
-      internalID: 9176099198678699943
+      spriteID: b7117c35e723d5e10800000000000000
+      internalID: 2187960512124752251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_9
+      name: c_animasyonlu_9
       rect:
         serializedVersion: 2
-        x: 593
-        y: 4
-        width: 24
-        height: 56
+        x: 37
+        y: 0
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,20 +346,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6f485223c38da8f30800000000000000
-      internalID: 4578709724226487542
+      spriteID: cd02ea0785b0de080800000000000000
+      internalID: -9156649992898862884
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_10
+      name: c_animasyonlu_10
       rect:
         serializedVersion: 2
-        x: 657
-        y: 4
-        width: 24
-        height: 57
+        x: 69
+        y: 31
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +368,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 19d7471e616dd7c20800000000000000
-      internalID: 3205953903517793681
+      spriteID: ae958c539f4950630800000000000000
+      internalID: 3892681251001752042
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: walkin-l_11
+      name: c_animasyonlu_11
       rect:
         serializedVersion: 2
-        x: 721
-        y: 4
-        width: 34
-        height: 47
+        x: 69
+        y: 0
+        width: 22
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,8 +390,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a722869fb39ee32c0800000000000000
-      internalID: -4449862937998777734
+      spriteID: a4460e8c5fdaacff0800000000000000
+      internalID: -15008377593633718
       vertices: []
       indices: 
       edges: []
@@ -410,18 +410,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      walkin-l_0: -7063819585010422551
-      walkin-l_1: 5030005761666979308
-      walkin-l_10: 3205953903517793681
-      walkin-l_11: -4449862937998777734
-      walkin-l_2: -3522334527987518853
-      walkin-l_3: -8189412620003487160
-      walkin-l_4: -4663615250762882673
-      walkin-l_5: -7034488572986237041
-      walkin-l_6: 8660425906151298858
-      walkin-l_7: -5600740403278717930
-      walkin-l_8: 9176099198678699943
-      walkin-l_9: 4578709724226487542
+      c_animasyonlu_0: 5454619182621683084
+      c_animasyonlu_1: 8201245802053384678
+      c_animasyonlu_10: 3892681251001752042
+      c_animasyonlu_11: -15008377593633718
+      c_animasyonlu_2: 1603250902534997028
+      c_animasyonlu_3: -1448352956585974494
+      c_animasyonlu_4: 8442727522477563370
+      c_animasyonlu_5: -1518452482833409507
+      c_animasyonlu_6: 463888209715179568
+      c_animasyonlu_7: -7915657795442426348
+      c_animasyonlu_8: 2187960512124752251
+      c_animasyonlu_9: -9156649992898862884
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
