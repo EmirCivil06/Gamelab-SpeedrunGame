@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5499110932319462014}
   - component: {fileID: 3604447258272586115}
   - component: {fileID: 421892412699526933}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Lama
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -82,8 +82,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1675783757
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -7063819585010422551, guid: a1eac52abfc990349bd773c1280d9f19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -318,7 +318,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   isGrounded: 0
-  _input: {fileID: 2200807241125412431}
   _move:
     m_Name: Move
     m_Type: 0

@@ -49,5 +49,20 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2846549053
+    locked: 0
+  - name: Objects
+    uniqueID: 945130273
+    locked: 0
+  - name: Enemies
+    uniqueID: 4007585845
+    locked: 0
+  - name: Bullets
+    uniqueID: 3429909687
+    locked: 0
+  - name: Player
+    uniqueID: 1675783757
+    locked: 0
   m_RenderingLayers:
   - Default
