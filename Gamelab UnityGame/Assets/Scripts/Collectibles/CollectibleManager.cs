@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -7,16 +8,15 @@ using UnityEngine.UI;
 public class CollectibleManager : MonoBehaviour
 {
     public static CollectibleManager Instance { get; private set; }
+    private Collectible _collectible;
 
     [SerializeField]
     private int currentScore;
-    
-    
     public TextMeshProUGUI scoreText;
-
     public int CurrentScore => currentScore;
 
     public event Action<int> OnScoreChanged;
+    private Collectible[] _collectibles;
 
     private void Awake()
     {
@@ -25,17 +25,30 @@ public class CollectibleManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
         Instance = this;
-        
+        _collectibles = FindObjectsOfType<Collectible>();
+        foreach (var collectible in _collectibles)
+        {
+            if (collectible != null)
+            {
+                collectible.OnCollectibleAnimation += RegisterCollect;
+            }
+        }
         
     }
-
     private void OnDestroy()
     {
         if (Instance == this)
         {
             Instance = null;
+        }
+
+        foreach (var collectible in _collectibles)
+        {
+            if (collectible != null)
+            {
+                collectible.OnCollectibleAnimation -= RegisterCollect;
+            }
         }
     }
 
@@ -44,8 +57,7 @@ public class CollectibleManager : MonoBehaviour
         currentScore += amount;
         scoreText.text = currentScore.ToString();
 
-        // event sistemi henüz eklenmedi
-        //OnScoreChanged?.Invoke(currentScore);
+        //OnScoreChanged?.Invoke(currentScore); // UI does not implemented yet
     }
 
     public void ResetScore()

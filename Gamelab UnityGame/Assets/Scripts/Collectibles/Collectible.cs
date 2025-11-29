@@ -1,15 +1,22 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
+[RequireComponent(typeof(Animator))]
 public class Collectible : MonoBehaviour
 {
-    [SerializeField]
-    private int scoreValue = 1;
-
+    [SerializeField] private int scoreValue = 1;
+    public int ScoreValue
+    {
+        get => scoreValue;
+    }
 
     private Collider2D _collider;
+    public Animator _animator;
 
-
+    public delegate void CollectibleAnimationHandler(int score);
+    public event CollectibleAnimationHandler OnCollectibleAnimation;
+    
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
@@ -18,6 +25,7 @@ public class Collectible : MonoBehaviour
             _collider.isTrigger = true;
         }
         // burası collectible'ın 'Is trigger'ı tiklemeyi unutulursa diye eklendi
+        _animator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -26,22 +34,20 @@ public class Collectible : MonoBehaviour
         {
             return; // Player hariç çarpışmalarda hiç bir şey yapma
         }
-
+        
         Collect();
     }
 
-    private void Collect()
+    public void Collect()
     {
-        if (CollectibleManager.Instance != null)
-        {
-            CollectibleManager.Instance.RegisterCollect(scoreValue);
-        }
-        else
-        {
-            Debug.LogWarning($"Collectible picked up but no {nameof(CollectibleManager)} found in the scene.", this);
-        }
-
+        OnCollectibleAnimation?.Invoke(scoreValue); // Collectible üzerinden collectible animasyonu çalıştırılması için event ateşliyorum
         Destroy(gameObject);
+        
+    }
+
+    private void OnDestroy()
+    {
+        _animator.SetBool("onDestroy", true);
     }
 }
 
