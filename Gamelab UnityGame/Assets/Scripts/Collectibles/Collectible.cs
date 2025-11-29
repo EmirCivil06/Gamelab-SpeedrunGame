@@ -17,13 +17,14 @@ public class Collectible : MonoBehaviour
         {
             _collider.isTrigger = true;
         }
+        // burası collectible'ın 'Is trigger'ı tiklemeyi unutulursa diye eklendi
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player"))
         {
-            return;
+            return; // Player hariç çarpışmalarda hiç bir şey yapma
         }
 
         Collect();

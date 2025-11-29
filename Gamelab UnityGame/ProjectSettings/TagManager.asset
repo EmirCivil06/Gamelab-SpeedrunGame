@@ -10,6 +10,7 @@ TagManager:
   - Bullets
   - Enemies
   - UI
+  - Collectible
   layers:
   - Default
   - TransparentFX

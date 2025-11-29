@@ -15,12 +15,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool isGrounded;
 
     [Header("Movement")]
-    [SerializeField] private PlayerInput _input;
     [SerializeField] private InputAction _move, _jump;
     public float moveSpeed = 5f;
     public float jumpForce = 5f;
     private float coyoteTime = .8f; // çakılma süresi
     public float inputX;
+    private bool _flip;
 
     private float lastGroundCheckTime;
     private int jumpCount; 
@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        _input = GetComponent<PlayerInput>();
         animator = GetComponent<Animator>();
         SpriteRenderer = GetComponent<SpriteRenderer>();
         
@@ -76,6 +75,10 @@ public class PlayerController : MonoBehaviour
         if (jumpCount!=0 && IsGrounded()){
             jumpCount = 0;
         }
+
+        
+        
+        
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -86,12 +89,17 @@ public class PlayerController : MonoBehaviour
 
     private void PerformMoving()
     {
-        if (inputX < 0){
+        if (inputX < 0)
+        {
+            _flip = false;
             SpriteRenderer.flipX = false;
         }
-        else if (inputX > 0){
+        else if (inputX > 0)
+        {
+            _flip = true;
             SpriteRenderer.flipX = true;
         }
+        
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
         animator.SetFloat("HorizontalMove", Mathf.Abs(inputX));
     }
