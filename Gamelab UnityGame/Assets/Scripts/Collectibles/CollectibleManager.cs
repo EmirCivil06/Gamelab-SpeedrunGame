@@ -56,8 +56,6 @@ public class CollectibleManager : MonoBehaviour
     {
         currentScore += amount;
         scoreText.text = currentScore.ToString();
-
-        //OnScoreChanged?.Invoke(currentScore); // UI does not implemented yet
     }
 
     public void ResetScore()
