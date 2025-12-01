@@ -1,8 +1,7 @@
 using System;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 
 public class CollectibleManager : MonoBehaviour
@@ -12,7 +11,8 @@ public class CollectibleManager : MonoBehaviour
 
     [SerializeField]
     private int currentScore;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] private UIDocument gameUI;
+    private Label scoreText;
     public int CurrentScore => currentScore;
 
     public event Action<int> OnScoreChanged;
@@ -25,6 +25,9 @@ public class CollectibleManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        scoreText = gameUI.rootVisualElement.Q("Score") as Label;
+
         Instance = this;
         _collectibles = FindObjectsOfType<Collectible>();
         foreach (var collectible in _collectibles)
@@ -55,7 +58,7 @@ public class CollectibleManager : MonoBehaviour
     public void RegisterCollect(int amount)
     {
         currentScore += amount;
-        scoreText.text = currentScore.ToString();
+        scoreText.text = ": " + currentScore.ToString();
     }
 
     public void ResetScore()

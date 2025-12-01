@@ -7,6 +7,7 @@ public class InfoMenuEvents : MonoBehaviour
     private UIDocument InfoUI;
     private VisualElement image1, image2, image3;
     private Label text;
+    [SerializeField] private GameObject nextUI;
 
     private void Awake()
     {
@@ -42,7 +43,7 @@ public class InfoMenuEvents : MonoBehaviour
 
     IEnumerator whyNoLambdaTho()
     {
-        float duration = 0.75f;
+        float duration = 0.5f;
         float time = 0f;
 
         VisualElement root = InfoUI.rootVisualElement;
@@ -59,6 +60,7 @@ public class InfoMenuEvents : MonoBehaviour
         }
 
         // optionally hide completely
+        nextUI.SetActive(true);
         ResumeGame();
         root.style.display = DisplayStyle.None;
     }
