@@ -35,3 +35,13 @@
     height: auto;
     min-height: 41px;
 }
+
+.transition {
+    transition-property: opacity;
+    transition-duration: 0.7s;
+    transition-timing-function: ease-in-out;
+}
+
+.invis {
+    opacity: 0;
+}
