@@ -39,6 +39,8 @@ public EnemyType enemyType;
 
     private Transform lamaTransform; 
 
+    private AudioSource throwing;
+
 
     void Start(){
         currentState = EnemyState.idle;
@@ -48,6 +50,7 @@ public EnemyType enemyType;
         animator = GetComponentInChildren<Animator>();
 
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        throwing = GetComponentInChildren<AudioSource>();
 
         if (spriteRenderer == null) {
         Debug.Log("horozun spriterenderer'i yok kingo.");
@@ -121,6 +124,7 @@ public EnemyType enemyType;
 
         if (mermiPrefab != null && atesNoktasi != null) {
             GameObject mermi = Instantiate(mermiPrefab, atesNoktasi.position, Quaternion.identity);
+            throwing.PlayOneShot(throwing.clip);
 
             Rigidbody2D rb = mermi.GetComponent<Rigidbody2D>();
 
@@ -172,7 +176,7 @@ public EnemyType enemyType;
         currentState = EnemyState.attack;
     }
 
-    /*void Patrol()
+/*void Patrol()
   {
       if (Vector2.Distance(transform.position, targetPoint.position) < 0.1f) {
 
@@ -193,4 +197,3 @@ public EnemyType enemyType;
       //lama gorduk mu buranin asagisinda bak ona gore hareket edecek.
   }*/
 }
-

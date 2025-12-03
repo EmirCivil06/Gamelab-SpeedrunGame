@@ -13,6 +13,7 @@ public class CollectibleManager : MonoBehaviour
     [SerializeField]
     private int currentScore;
     [SerializeField] private UIDocument gameUI;
+    [SerializeField] private AudioSource coinCollect;
     private Label scoreText;
     public int CurrentScore => currentScore;
 
@@ -65,12 +66,16 @@ public class CollectibleManager : MonoBehaviour
     {
         currentScore += amount;
         scoreText.text = ": " + currentScore.ToString();
+        OnScoreChanged?.Invoke(currentScore);
+        coinCollect.PlayOneShot(coinCollect.clip);
     }
 
-    public void ResetScore()
-    {
-        currentScore = 0;
-        //OnScoreChanged?.Invoke(currentScore);
-    }
+    
+
+    //public void ResetScore()
+    //{
+    //currentScore = 0;
+    //OnScoreChanged?.Invoke(currentScore);
+    //}
 }
 
