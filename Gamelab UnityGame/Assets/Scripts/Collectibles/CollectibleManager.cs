@@ -2,6 +2,7 @@ using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UIElements;
+using Object = System.Object;
 
 
 public class CollectibleManager : MonoBehaviour
@@ -29,7 +30,7 @@ public class CollectibleManager : MonoBehaviour
         scoreText = gameUI.rootVisualElement.Q("Score") as Label;
 
         Instance = this;
-        _collectibles = FindObjectsOfType<Collectible>();
+        _collectibles = FindObjectsByType<Collectible>(FindObjectsInactive.Exclude,FindObjectsSortMode.None);
         foreach (var collectible in _collectibles)
         {
             if (collectible != null)
@@ -44,6 +45,11 @@ public class CollectibleManager : MonoBehaviour
         if (Instance == this)
         {
             Instance = null;
+        }
+
+        if (_collectibles == null)
+        {
+            return;
         }
 
         foreach (var collectible in _collectibles)
