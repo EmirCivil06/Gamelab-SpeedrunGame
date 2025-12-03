@@ -60,8 +60,8 @@ public class InfoMenuEvents : MonoBehaviour
         }
 
         // optionally hide completely
-        nextUI.SetActive(true);
         ResumeGame();
+        nextUI.SetActive(true);
         root.style.display = DisplayStyle.None;
     }
 
