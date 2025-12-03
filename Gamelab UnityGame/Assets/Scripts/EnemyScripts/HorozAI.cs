@@ -123,7 +123,7 @@ public EnemyType enemyType;
             mermiPrefab = ps5KoluPrefab;
 
         if (mermiPrefab != null && atesNoktasi != null) {
-            GameObject mermi = Instantiate(mermiPrefab, atesNoktasi.position, Quaternion.identity);
+            GameObject mermi = Instantiate(mermiPrefab, atesNoktasi.position, mermiPrefab.transform.rotation);
             throwing.PlayOneShot(throwing.clip);
 
             Rigidbody2D rb = mermi.GetComponent<Rigidbody2D>();

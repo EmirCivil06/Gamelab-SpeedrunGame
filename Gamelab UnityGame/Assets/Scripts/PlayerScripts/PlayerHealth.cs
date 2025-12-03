@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -73,11 +74,12 @@ public class PlayerHealth : MonoBehaviour
         RespawnPlayer();
     }
 
-    public void ResetHealth()
+    public void GameOver()
     {
         _currentHealth = Mathf.Max(1, maxHealth);
         NotifyHealthChanged();
-        RespawnPlayer();
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex);
     }
 
     public void SetSpawnPoint(Vector3 position)
@@ -113,6 +115,13 @@ public class PlayerHealth : MonoBehaviour
     private void NotifyHealthChanged()
     {
         onHealthChanged?.Invoke(_currentHealth);
+        if (_currentHealth <= 0)
+        {
+            Debug.Log("Game Over");
+            var player = GameObject.FindGameObjectWithTag("Player");
+            Destroy(player);
+            GameOver();
+        }
     }
 
     private void CacheSpawnPosition()

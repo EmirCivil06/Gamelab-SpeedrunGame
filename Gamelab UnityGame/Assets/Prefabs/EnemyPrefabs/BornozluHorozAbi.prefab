@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 5286010438915491465}
   - component: {fileID: 3215355290895006713}
   - component: {fileID: -382347719267381523}
-  - component: {fileID: 1802680220008959010}
+  - component: {fileID: 5191699746471759261}
   m_Layer: 9
-  m_Name: BornozluHoroz
+  m_Name: BornozluHorozAbi
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -1.64, z: 0}
-  m_LocalScale: {x: 3.4795897, y: 4.275, z: 1.76716}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 12.285932, z: 5.0786448}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7714824942572918160}
   m_Father: {fileID: 0}
@@ -111,8 +111,8 @@ MonoBehaviour:
   enemyType: 1
   currentState: 0
   movementSpeed: 3
-  gorusMesafesi: 10
-  duymaMesafesi: 3
+  gorusMesafesi: 60
+  duymaMesafesi: 30
   mermiGecikmesi: 0.3
   lamaLayer:
     serializedVersion: 2
@@ -208,7 +208,7 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.46, y: 0.49999997}
   m_Direction: 0
---- !u!82 &1802680220008959010
+--- !u!82 &5191699746471759261
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
