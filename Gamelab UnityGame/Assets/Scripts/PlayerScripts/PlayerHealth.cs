@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private UnityEvent onPlayerRespawned;
 
+    [Header("Fields for Responsive UI")]
+    [SerializeField] private UIDocument gameUI;
+    private VisualElement healthBar;
+    [SerializeField] private Sprite full, two, one;
+
     private int _currentHealth;
     private Vector3 _spawnPosition;
 
@@ -43,8 +49,28 @@ public class PlayerHealth : MonoBehaviour
 
         Instance = this;
 
+        healthBar = gameUI.rootVisualElement.Q("HealthBar");
+
         ResolvePlayerReferences();
         CacheSpawnPosition();
+    }
+
+    void Update()
+    {
+        switch (_currentHealth)
+        {
+            case 2:
+            healthBar.style.backgroundImage = new StyleBackground(two);
+            break;
+
+            case 1:
+            healthBar.style.backgroundImage = new StyleBackground(one);
+            break;
+
+            default:
+            healthBar.style.backgroundImage = new StyleBackground(full);
+            break;
+        }
     }
 
     private void OnEnable()
@@ -60,6 +86,8 @@ public class PlayerHealth : MonoBehaviour
             Instance = null;
         }
     }
+
+    
 
     public void TakeDamage(int amount)
     {
