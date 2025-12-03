@@ -111,8 +111,8 @@ MonoBehaviour:
   enemyType: 1
   currentState: 0
   movementSpeed: 3
-  gorusMesafesi: 60
-  duymaMesafesi: 30
+  gorusMesafesi: 30
+  duymaMesafesi: 15
   mermiGecikmesi: 0.3
   lamaLayer:
     serializedVersion: 2
