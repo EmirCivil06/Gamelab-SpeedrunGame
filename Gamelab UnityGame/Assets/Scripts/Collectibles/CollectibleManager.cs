@@ -69,13 +69,5 @@ public class CollectibleManager : MonoBehaviour
         OnScoreChanged?.Invoke(currentScore);
         coinCollect.PlayOneShot(coinCollect.clip);
     }
-
-    
-
-    //public void ResetScore()
-    //{
-    //currentScore = 0;
-    //OnScoreChanged?.Invoke(currentScore);
-    //}
 }
 

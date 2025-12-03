@@ -113,6 +113,7 @@ public class PlayerHealth : MonoBehaviour
     private void NotifyHealthChanged()
     {
         onHealthChanged?.Invoke(_currentHealth);
+        
     }
 
     private void CacheSpawnPosition()
