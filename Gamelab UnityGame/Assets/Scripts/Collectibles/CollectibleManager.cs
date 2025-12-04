@@ -8,8 +8,6 @@ using Object = System.Object;
 public class CollectibleManager : MonoBehaviour
 {
     public static CollectibleManager Instance { get; private set; }
-    private Collectible _collectible;
-
     [SerializeField]
     private int currentScore;
     [SerializeField] private UIDocument gameUI;

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -13,6 +14,7 @@ public class Collectible : MonoBehaviour
 
     private Collider2D _collider;
     public Animator _animator;
+    private bool _isCollected;
 
     public delegate void CollectibleAnimationHandler(int score);
     public event CollectibleAnimationHandler OnCollectibleAnimation;
@@ -40,14 +42,59 @@ public class Collectible : MonoBehaviour
 
     public void Collect()
     {
-        OnCollectibleAnimation?.Invoke(scoreValue); // Collectible üzerinden collectible animasyonu çalıştırılması için event ateşliyorum
-        Destroy(gameObject);
+        if (_isCollected)
+        {
+            return;
+        }
+
+        _isCollected = true;
+
+        if (_collider != null)
+        {
+            _collider.enabled = false;
+        }
         
+        OnCollectibleAnimation?.Invoke(scoreValue); // Collectible üzerinden collectible animasyonu çalıştırılması için event ateşliyorum
+
+        if (_animator != null && gameObject.activeInHierarchy)
+        {
+            StartCoroutine(DestroyAfterAnimation());
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
-    private void OnDestroy()
+    private IEnumerator DestroyAfterAnimation()
     {
         _animator.SetBool("onDestroy", true);
+
+        // Animator'ın yeni state'e geçmesi için bir frame bekliyorum
+        yield return null;
+
+        //float waitTime = GetCurrentAnimationLength()
+        
+        const float waitTime = 0.5f; // animation üzerinde tüm collectible destroy animasyonları 30 fps ile oluşturulduğu için 0.5f saniye bekliyorum
+        if (waitTime > 0f)
+        {
+            yield return new WaitForSeconds(waitTime);
+        }
+
+        Destroy(gameObject);
+    }
+
+    private float GetCurrentAnimationLength()
+    {
+        var clipInfos = _animator.GetCurrentAnimatorClipInfo(0);
+        if (clipInfos.Length > 0)
+        {
+            return clipInfos[0].clip.length / Mathf.Max(_animator.speed, 0.01f);
+        }
+
+        var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        float stateSpeed = Mathf.Max(stateInfo.speed, 0.01f);
+        return stateInfo.length / stateSpeed;
     }
 }
 
