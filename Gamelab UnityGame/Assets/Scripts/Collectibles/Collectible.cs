@@ -84,17 +84,17 @@ public class Collectible : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private float GetCurrentAnimationLength()
-    {
-        var clipInfos = _animator.GetCurrentAnimatorClipInfo(0);
-        if (clipInfos.Length > 0)
-        {
-            return clipInfos[0].clip.length / Mathf.Max(_animator.speed, 0.01f);
-        }
+    // private float GetCurrentAnimationLength()
+    // {
+        // var clipInfos = _animator.GetCurrentAnimatorClipInfo(0);
+        // if (clipInfos.Length > 0)
+        // {
+            // return clipInfos[0].clip.length / Mathf.Max(_animator.speed, 0.01f);
+        // }
 
-        var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-        float stateSpeed = Mathf.Max(stateInfo.speed, 0.01f);
-        return stateInfo.length / stateSpeed;
-    }
+        // var stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
+        // float stateSpeed = Mathf.Max(stateInfo.speed, 0.01f);
+        // return stateInfo.length / stateSpeed;
+    // }
 }
 
