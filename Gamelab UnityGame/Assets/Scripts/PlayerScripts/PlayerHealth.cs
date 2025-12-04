@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour
     [Header("Fields for Responsive UI")]
     [SerializeField] private UIDocument gameUI;
     private VisualElement healthBar;
-    [SerializeField] private Sprite full, two, one;
+    [SerializeField] private Sprite full, two, one, zero;
 
     private int _currentHealth;
     private Vector3 _spawnPosition;
@@ -60,16 +60,18 @@ public class PlayerHealth : MonoBehaviour
         switch (_currentHealth)
         {
             case 2:
-            healthBar.style.backgroundImage = new StyleBackground(two);
-            break;
+                healthBar.style.backgroundImage = new StyleBackground(two);
+                break;
 
             case 1:
-            healthBar.style.backgroundImage = new StyleBackground(one);
-            break;
-
+                healthBar.style.backgroundImage = new StyleBackground(one);
+                break;
+            case 0:
+                healthBar.style.backgroundImage = new StyleBackground(zero);
+                break;
             default:
-            healthBar.style.backgroundImage = new StyleBackground(full);
-            break;
+                healthBar.style.backgroundImage = new StyleBackground(full);
+                break;
         }
     }
 
