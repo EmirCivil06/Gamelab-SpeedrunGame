@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 218e178212a1d7f4d9c248776976bc78
+guid: b1872f78d6e1a4e4490be3e3f330ff9b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8927198743153771287
-    second: GameLabSpeedrunTaslak_0
+      213: 4689240166119133576
+    second: pixilart-sprite_0
+  - first:
+      213: 4521018998857404175
+    second: pixilart-sprite_1
+  - first:
+      213: -4621546931983276131
+    second: pixilart-sprite_2
+  - first:
+      213: 713319685308842295
+    second: pixilart-sprite_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,67 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameLabSpeedrunTaslak_0
+      name: pixilart-sprite_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
-        width: 32
-        height: 32
+        y: 7
+        width: 57
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7138ef465f7c3eb70800000000000000
-      internalID: 8927198743153771287
+      spriteID: 88156002617831140800000000000000
+      internalID: 4689240166119133576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameLabSpeedrunTaslak_1
+      name: pixilart-sprite_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 32
-        height: 32
+        x: 63
+        y: 7
+        width: 58
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: c8be35a30eb419f418a9caf215056a7f
-      internalID: 1969033784
+      spriteID: f0f00b973d2edbe30800000000000000
+      internalID: 4521018998857404175
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GameLabSpeedrunTaslak_2
+      name: pixilart-sprite_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
-        width: 32
-        height: 32
+        x: 127
+        y: 7
+        width: 58
+        height: 57
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 78f417fa85c1fe74f821a56fcc2cd2c6
-      internalID: -1156897084
+      spriteID: d9727562d87fcdfb0800000000000000
+      internalID: -4621546931983276131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pixilart-sprite_3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 7
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7318026797836e900800000000000000
+      internalID: 713319685308842295
       vertices: []
       indices: 
       edges: []
@@ -169,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a4e3489a992d0ce4f9284dde8e3b9287
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -177,13 +208,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      GameLabSpeedrunTaslak_0: 8927198743153771287
-      GameLabSpeedrunTaslak_1: 1969033784
-      GameLabSpeedrunTaslak_2: -1156897084
+      pixilart-sprite_0: 4689240166119133576
+      pixilart-sprite_1: 4521018998857404175
+      pixilart-sprite_2: -4621546931983276131
+      pixilart-sprite_3: 713319685308842295
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -2,36 +2,38 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
-    public float omurSuresi = 5f; // Mermi ne kadar süre sonra yok olacak
+    public float omurSuresi = 5f; // Mermi ne kadar sï¿½re sonra yok olacak
 
     void Start()
     {
-        // Belirtilen süre sonunda mermiyi yok et
+        // Belirtilen sï¿½re sonunda mermiyi yok et
         Destroy(gameObject, omurSuresi);
     }
 
-    // Bu fonksiyon, mermi baþka bir Collider2D'ye temas ettiðinde çaðrýlýr
+    // Bu fonksiyon, mermi baï¿½ka bir Collider2D'ye temas ettiï¿½inde ï¿½aï¿½rï¿½lï¿½r
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Eðer mermi Lama'ya çarparsa
-        if (other.CompareTag("Player")) // Lama'nýn Tag'i "Player" olmalý
+        // Eï¿½er mermi Lama'ya ï¿½arparsa
+        if (other.CompareTag("Player")) // Lama'nï¿½n Tag'i "Player" olmalï¿½
         {
-            //lamanýn sabrýný azaltma kodu buraya gelecek
-            Debug.Log("Mermi Lama'ya çarptý!");
+            if (PlayerHealth.Instance != null)
+            {
+                PlayerHealth.Instance.TakeDamage(1);
+            }
 
             Destroy(gameObject); // Mermiyi yok et
 
-            // Eðer Lama'ya özgü bir hasar efekti vb. varsa buraya ekleyebilirsin
+            // Eï¿½er Lama'ya ï¿½zgï¿½ bir hasar efekti vb. varsa buraya ekleyebilirsin
         }
 
-        // Eðer mermi bir zemine, duvara veya baþka bir engere çarparsa
+        // Eï¿½er mermi bir zemine, duvara veya baï¿½ka bir engere ï¿½arparsa
         /*else if (other.CompareTag("Zemin") || other.CompareTag("Duvar")) 
         {
-            Debug.Log("Mermi zemine/duvara çarptý!");
+            Debug.Log("Mermi zemine/duvara ï¿½arptï¿½!");
             Destroy(gameObject);
         }*/
 
-        // Diðer bir ihtimalle baþka mermiye veya düþmana çarparsa da yok olsun diyebiliriz.
+        // Diï¿½er bir ihtimalle baï¿½ka mermiye veya dï¿½ï¿½mana ï¿½arparsa da yok olsun diyebiliriz.
          else if (other.CompareTag("Enemies") || other.CompareTag("Bullets"))
          {
              Destroy(gameObject);

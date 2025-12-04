@@ -1,8 +1,8 @@
 using System;
 using System.Runtime.CompilerServices;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.UIElements;
+using Object = System.Object;
 
 
 public class CollectibleManager : MonoBehaviour
@@ -12,7 +12,9 @@ public class CollectibleManager : MonoBehaviour
 
     [SerializeField]
     private int currentScore;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] private UIDocument gameUI;
+    [SerializeField] private AudioSource coinCollect;
+    private Label scoreText;
     public int CurrentScore => currentScore;
 
     public event Action<int> OnScoreChanged;
@@ -25,8 +27,11 @@ public class CollectibleManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
+        scoreText = gameUI.rootVisualElement.Q("Score") as Label;
+
         Instance = this;
-        _collectibles = FindObjectsOfType<Collectible>();
+        _collectibles = FindObjectsByType<Collectible>(FindObjectsInactive.Exclude,FindObjectsSortMode.None);
         foreach (var collectible in _collectibles)
         {
             if (collectible != null)
@@ -43,6 +48,11 @@ public class CollectibleManager : MonoBehaviour
             Instance = null;
         }
 
+        if (_collectibles == null)
+        {
+            return;
+        }
+
         foreach (var collectible in _collectibles)
         {
             if (collectible != null)
@@ -55,13 +65,9 @@ public class CollectibleManager : MonoBehaviour
     public void RegisterCollect(int amount)
     {
         currentScore += amount;
-        scoreText.text = currentScore.ToString();
-    }
-
-    public void ResetScore()
-    {
-        currentScore = 0;
-        //OnScoreChanged?.Invoke(currentScore);
+        scoreText.text = ": " + currentScore.ToString();
+        OnScoreChanged?.Invoke(currentScore);
+        coinCollect.PlayOneShot(coinCollect.clip);
     }
 }
 

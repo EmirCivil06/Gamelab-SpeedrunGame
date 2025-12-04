@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6219519022826448474}
   - component: {fileID: 5499110932319462014}
   - component: {fileID: 3604447258272586115}
-  - component: {fileID: 421892412699526933}
+  - component: {fileID: 5073596274764152091}
   m_Layer: 7
   m_Name: Lama
   m_TagString: Player
@@ -63,7 +63,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: 1675783757
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7063819585010422551, guid: a1eac52abfc990349bd773c1280d9f19, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cbe87789bfaa91949b1bf52a3efb5ef6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -249,7 +249,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 1.5
   m_Material: {fileID: 6200000, guid: ad7264b989a1435459f218664e3aaaa2, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -310,8 +310,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4642c27ee23d6714b9af25379fc52cce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  animator: {fileID: 421892412699526933}
-  SpriteRenderer: {fileID: 0}
+  animator: {fileID: 5073596274764152091}
+  SpriteRenderer: {fileID: 3572359091980649585}
   groundCheck: {fileID: 8108790846132507886}
   groundCheckRadius: 2
   groundLayer:
@@ -336,8 +336,8 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  moveSpeed: 7
-  jumpForce: 7
+  moveSpeed: 9
+  jumpForce: 8
   inputX: 0
 --- !u!114 &3604447258272586115
 MonoBehaviour:
@@ -358,7 +358,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
---- !u!95 &421892412699526933
+--- !u!95 &5073596274764152091
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0

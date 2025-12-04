@@ -12,11 +12,11 @@ GameObject:
   - component: {fileID: 610715631774424969}
   - component: {fileID: -9048500198924120991}
   - component: {fileID: 5286010438915491465}
-  - component: {fileID: 5660958150030816217}
-  - component: {fileID: 105643556783582622}
-  - component: {fileID: 2956721357366717971}
+  - component: {fileID: 3215355290895006713}
+  - component: {fileID: -382347719267381523}
+  - component: {fileID: 5191699746471759261}
   m_Layer: 9
-  m_Name: NormalHoroz
+  m_Name: BornozluHorozAbi
   m_TagString: Enemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.4, y: -1.64, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1.3924636}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 10, y: 12.285932, z: 5.0786448}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7714824942572918160}
   m_Father: {fileID: 0}
@@ -85,7 +85,7 @@ SpriteRenderer:
   m_SortingLayerID: -287381451
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6243735812482984407, guid: e0217e9be417f5d47952df1cfb31c690, type: 3}
+  m_Sprite: {fileID: -6279957355325646376, guid: cb086c769a1a0224ca5e5ab3c389e2d7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,15 +108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78a8f5c17e3f0cc4f8381948db261e44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HorozAI
-  enemyType: 0
+  enemyType: 1
   currentState: 0
   movementSpeed: 3
-  gorusMesafesi: 10
-  duymaMesafesi: 3
+  gorusMesafesi: 30
+  duymaMesafesi: 15
   mermiGecikmesi: 0.3
   lamaLayer:
     serializedVersion: 2
-    m_Bits: 136
+    m_Bits: 128
   atesNoktasi: {fileID: 7714824942572918160}
   okeyTasiPrefab: {fileID: 777116842526959335, guid: 6e5ed9c8a625d8b429069e37b2b14d4f, type: 3}
   ps5KoluPrefab: {fileID: 8277510084925365822, guid: 8eaeb5c613452e743ad9cb83c384e59f, type: 3}
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &5660958150030816217
+--- !u!95 &3215355290895006713
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -159,7 +159,7 @@ Animator:
   m_GameObject: {fileID: 1629144002489210425}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97dcb364c74ee7f4fae429f8767d9b75, type: 2}
+  m_Controller: {fileID: 22100000, guid: 470c3ca26cd3c7f4ba7afb472086f97e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -171,7 +171,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &105643556783582622
+--- !u!70 &-382347719267381523
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,9 +206,9 @@ CapsuleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.4, y: 0.49999997}
+  m_Size: {x: 0.46, y: 0.49999997}
   m_Direction: 0
---- !u!82 &2956721357366717971
+--- !u!82 &5191699746471759261
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,7 +330,7 @@ Transform:
   m_GameObject: {fileID: 7559681289602501042}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.239, y: -0.015, z: 0}
+  m_LocalPosition: {x: -0.162, y: -0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
