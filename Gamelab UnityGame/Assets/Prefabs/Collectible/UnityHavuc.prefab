@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 5454619182621683084, guid: 2632d2f43cfc5fb408b1e173d54f83fd, type: 3}
+  m_Sprite: {fileID: -8228774637610538971, guid: 186ca2cd55f004b4494231e17dd1d009, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
   scoreValue: 1
+  _animator: {fileID: 3584121264125565561}
 --- !u!95 &3584121264125565561
 Animator:
   serializedVersion: 7

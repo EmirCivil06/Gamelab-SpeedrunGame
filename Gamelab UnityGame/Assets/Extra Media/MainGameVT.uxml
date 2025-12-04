@@ -1,5 +1,5 @@
 <ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/Extra%20Media/MainGameUI.uss?fileID=7433441132597879392&amp;guid=32666776a141f0f47b74b859b69e1964&amp;type=3#MainGameUI" />
+    <Style src="project://database/Assets/Extra%20Media/MainGameUI.uss?fileID=7433441132597879392&amp;guid=32666776a141f0f47b74b859b69e1964&amp;type=3" />
     <ui:VisualElement name="ScoreLabel" style="position: absolute; flex-direction: row; margin-top: 1.25%; margin-left: 1.25%;">
         <ui:VisualElement name="Image" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Sprites/Cellectibles/c_animasyonlu.png?fileID=5454619182621683084&amp;guid=2632d2f43cfc5fb408b1e173d54f83fd&amp;type=3#c_animasyonlu_0&quot;); height: 192px; width: 192px;" />
         <ui:Label text=": 0" name="Score" style="font-size: 50px; align-items: center; justify-content: space-evenly; align-self: center; align-content: center; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); color: rgb(255, 255, 255);" />

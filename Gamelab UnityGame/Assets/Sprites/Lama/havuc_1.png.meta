@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: b1872f78d6e1a4e4490be3e3f330ff9b
+guid: cf9a3e7949e94b64b88da94b0f495072
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4689240166119133576
-    second: pixilart-sprite_0
-  - first:
-      213: 4521018998857404175
-    second: pixilart-sprite_1
-  - first:
-      213: -4621546931983276131
-    second: pixilart-sprite_2
-  - first:
-      213: 713319685308842295
-    second: pixilart-sprite_3
+      213: 5932489356920170211
+    second: havuc_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pixilart-sprite_0
+      name: havuc_1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -124,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 88156002617831140800000000000000
-      internalID: 4689240166119133576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite_1
-      rect:
-        serializedVersion: 2
-        x: 63
-        y: 7
-        width: 58
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f0f00b973d2edbe30800000000000000
-      internalID: 4521018998857404175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite_2
-      rect:
-        serializedVersion: 2
-        x: 127
-        y: 7
-        width: 58
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d9727562d87fcdfb0800000000000000
-      internalID: -4621546931983276131
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: pixilart-sprite_3
-      rect:
-        serializedVersion: 2
-        x: 191
-        y: 7
-        width: 58
-        height: 57
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7318026797836e900800000000000000
-      internalID: 713319685308842295
+      spriteID: 3e6230173af645250800000000000000
+      internalID: 5932489356920170211
       vertices: []
       indices: 
       edges: []
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      pixilart-sprite_0: 4689240166119133576
-      pixilart-sprite_1: 4521018998857404175
-      pixilart-sprite_2: -4621546931983276131
-      pixilart-sprite_3: 713319685308842295
+      havuc_1_0: 5932489356920170211
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

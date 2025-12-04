@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: DamageFlashMAT
-  m_Shader: {fileID: -6465566751694194690, guid: 12030291765129346a538647097f40d3, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 8b8ba9ce5b124994cbb67566de194d12, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -68,6 +68,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
+    - _FlashAmaount: 0.4
     - _FlashAmount: 0
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -75,6 +76,7 @@ Material:
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flash: {r: 1, g: 1, b: 1, a: 1}
+    - _FlashColor: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

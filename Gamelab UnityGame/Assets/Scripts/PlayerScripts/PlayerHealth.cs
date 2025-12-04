@@ -21,10 +21,6 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private bool resetVelocityOnRespawn = true;
 
-    [Header("Events")]
-    [SerializeField]
-    private UnityEvent<int> onHealthChanged;
-
     [SerializeField]
     private UnityEvent onPlayerRespawned;
 
@@ -38,6 +34,9 @@ public class PlayerHealth : MonoBehaviour
 
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => maxHealth;
+    
+
+    public MainGameUIEvents uiEvents;
 
     private void Awake()
     {
@@ -53,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
 
         ResolvePlayerReferences();
         CacheSpawnPosition();
+        uiEvents = GameObject.FindObjectOfType<MainGameUIEvents>();
     }
 
     void Update()
@@ -142,7 +142,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void NotifyHealthChanged()
     {
-        onHealthChanged?.Invoke(_currentHealth);
+        //onHealthChanged?.Invoke(_currentHealth);
+        if (EnsureUIEventsReference())
+        {
+            uiEvents.UpdateHealth(_currentHealth);
+        }
         if (_currentHealth <= 0)
         {
             Debug.Log("Game Over");
@@ -158,6 +162,16 @@ public class PlayerHealth : MonoBehaviour
         {
             _spawnPosition = playerTransform.position;
         }
+    }
+
+    private bool EnsureUIEventsReference()
+    {
+        if (uiEvents == null)
+        {
+            uiEvents = FindObjectOfType<MainGameUIEvents>();
+        }
+
+        return uiEvents != null;
     }
 
     private void ResolvePlayerReferences()
