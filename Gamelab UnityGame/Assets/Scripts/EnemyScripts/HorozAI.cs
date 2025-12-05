@@ -152,11 +152,14 @@ public EnemyType enemyType;
 
     void LamayiAra()
     {
-        Collider2D arkaHit = Physics2D.OverlapCircle(transform.position, duymaMesafesi, lamaLayer);
-
-        if (arkaHit != null) {
-            TespitEt(arkaHit.transform);
-            return;
+        Collider2D[] yakinHedefler = Physics2D.OverlapCircleAll(transform.position, duymaMesafesi, lamaLayer);
+        foreach (Collider2D hedef in yakinHedefler)
+        {
+            if (hedef.CompareTag("Player"))
+            {
+                TespitEt(hedef.transform);
+                return; 
+            }
         }
 
 
@@ -166,7 +169,15 @@ public EnemyType enemyType;
 
         if (hit.collider != null)
         {
-            TespitEt(hit.transform);
+            if (hit.collider.CompareTag("Player"))
+            {
+                // Evet, oyuncuyu gördük!
+                TespitEt(hit.transform);
+            }
+            else
+            {
+
+            }
         }
     }
 
