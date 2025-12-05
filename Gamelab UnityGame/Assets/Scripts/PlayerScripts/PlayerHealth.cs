@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
@@ -175,5 +176,11 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.name == "Çukur")
+        {
+            TakeDamage(1);
+        }
+    }
 }
