@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 5499110932319462014}
   - component: {fileID: 3604447258272586115}
   - component: {fileID: 5073596274764152091}
+  - component: {fileID: -2167069576498849597}
   m_Layer: 7
   m_Name: Lama
   m_TagString: Player
@@ -380,3 +381,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2167069576498849597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768681926558605971}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 069d68a8ed1774d498a02cd8182de418, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+  playerTransform: {fileID: 8108790846132507886}
+  playerRigidbody: {fileID: 6380228550706262061}
+  maxHealth: 3
+  resetVelocityOnRespawn: 1
+  onPlayerRespawned:
+    m_PersistentCalls:
+      m_Calls: []
+  uiEvents: {fileID: 4404859672143509093, guid: e2280e51340aacd4c893ca409afd2e20, type: 3}
