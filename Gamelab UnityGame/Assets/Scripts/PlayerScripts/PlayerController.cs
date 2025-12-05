@@ -58,11 +58,12 @@ public class PlayerController : MonoBehaviour
         //Debug.Log("Jump Queued");
     }
 
-    void OnJumpCanceled(InputAction.CallbackContext context){
-        if (rb.linearVelocity.y > 0f){
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
+    void OnJumpCanceled(InputAction.CallbackContext context)
+    {
+        if (rb.linearVelocity.y > 0f)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * 0.5f);
         }
-        
     }
 
     // Update is called once per frame
@@ -89,17 +90,16 @@ public class PlayerController : MonoBehaviour
 
     private void PerformMoving()
     {
-        if (inputX < 0)
+        float mevcutBoyutX = Mathf.Abs(transform.localScale.x);
+        if (inputX > 0)
         {
-            _flip = false;
-            SpriteRenderer.flipX = false;
+            transform.localScale = new Vector3(mevcutBoyutX, transform.localScale.y, transform.localScale.z);
         }
-        else if (inputX > 0)
+        else if (inputX < 0)
         {
-            _flip = true;
-            SpriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-mevcutBoyutX, transform.localScale.y, transform.localScale.z);
         }
-        
+
         rb.linearVelocity = new Vector2(inputX * moveSpeed, rb.linearVelocity.y);
         animator.SetFloat("HorizontalMove", Mathf.Abs(inputX));
     }

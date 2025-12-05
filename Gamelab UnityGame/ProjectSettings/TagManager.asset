@@ -25,7 +25,7 @@ TagManager:
   - Bullets
   - Enemies
   - Background
-  - 
+  - Collectibles
   - 
   - 
   - 
@@ -61,6 +61,9 @@ TagManager:
     locked: 0
   - name: Bullets
     uniqueID: 3429909687
+    locked: 0
+  - name: Collectibles
+    uniqueID: 52086509
     locked: 0
   - name: Player
     uniqueID: 1675783757
