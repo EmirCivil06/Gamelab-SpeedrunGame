@@ -7,7 +7,6 @@ public class InfoMenuEvents : MonoBehaviour
     private UIDocument InfoUI;
     private VisualElement image1, image2, image3;
     private Label text;
-    [SerializeField] private GameObject nextUI;
 
     private void Awake()
     {
@@ -61,8 +60,8 @@ public class InfoMenuEvents : MonoBehaviour
 
         // optionally hide completely
         ResumeGame();
-        nextUI.SetActive(true);
         root.style.display = DisplayStyle.None;
+        Flag.sceneBeforIsActive = false;
     }
 
     private void OnEnterClick(ClickEvent evt)

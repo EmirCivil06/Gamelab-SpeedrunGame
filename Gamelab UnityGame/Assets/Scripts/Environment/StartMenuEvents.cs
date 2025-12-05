@@ -28,6 +28,7 @@ public class StartMenuEvents : MonoBehaviour
     // Dokümanı ve butonları alabilmek için awake metodu
     private void Awake()
     {
+        Flag.sceneBeforIsActive = true;
         mainMenuDocument = GetComponent<UIDocument>();
 
         _start = mainMenuDocument.rootVisualElement.Q("Start") as Button;

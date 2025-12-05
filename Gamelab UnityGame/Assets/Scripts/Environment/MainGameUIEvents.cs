@@ -51,8 +51,11 @@ public class MainGameUIEvents : MonoBehaviour
 
     void Update()
     {
-        timer.value -= Time.deltaTime;
-        soundTimer += Time.deltaTime;
+        if (!Flag.sceneBeforIsActive)
+        {
+            timer.value -= Time.deltaTime;
+            soundTimer += Time.deltaTime; 
+        }
         if (soundTimer >= soundInterval)
         {
              clockTicking.PlayOneShot(clockTicking.clip);
