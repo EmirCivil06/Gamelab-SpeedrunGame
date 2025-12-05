@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class MainGameUIEvents : MonoBehaviour
@@ -8,6 +10,12 @@ public class MainGameUIEvents : MonoBehaviour
     private UIDocument mainGameUI;
     private ProgressBar timer;
     private AudioSource clockTicking;
+
+    [Header("Game Over Değişkenleri")]
+    private VisualElement deathScreen;
+    private Button quit, tryAgain;
+
+    [Header("Timer Değişkenleri")]
     private float soundInterval = 1f;
     private float soundTimer = 0f;
 
@@ -17,12 +25,28 @@ public class MainGameUIEvents : MonoBehaviour
     [SerializeField] private Sprite oneHealth;
     [SerializeField] private Sprite noHealth;
     private VisualElement healthBar;
+
+    [SerializeField] private AudioSource click;
     void Awake()
     {
         mainGameUI = GetComponent<UIDocument>();
         timer = mainGameUI.rootVisualElement.Q("ProgressBar") as ProgressBar;
         clockTicking = GetComponent<AudioSource>();
+
+        deathScreen = mainGameUI.rootVisualElement.Q("DeathScreen");
+        quit = mainGameUI.rootVisualElement.Q("Quit") as Button;
+        tryAgain = mainGameUI.rootVisualElement.Q("Retry") as Button;
+
+        quit.RegisterCallback<ClickEvent>(OnQuitClick);
+        tryAgain.RegisterCallback<ClickEvent>(OnRetryClick);
+
         EnsureUIReferences();
+    }
+
+    private void OnDisable()
+    {
+        quit.UnregisterCallback<ClickEvent>(OnQuitClick);
+        tryAgain.UnregisterCallback<ClickEvent>(OnRetryClick);
     }
 
     void Update()
@@ -90,24 +114,35 @@ public class MainGameUIEvents : MonoBehaviour
         }
     }
 
+    public void ChangeToGameOver()
+    {
+        deathScreen.RemoveFromClassList("invis");
+    }
 
+    public void OnQuitClick(ClickEvent evt)
+    {
+        click.Play();
+        Application.Quit();
+        #if UNITY_EDITOR
+            EditorApplication.isPlaying = false;
+        #endif
+    }
 
+    public void OnRetryClick(ClickEvent evt)
+    {
+        click.Play();
+        var activeScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(activeScene.buildIndex);
+        ResumeNonInterface();
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    private void ResumeNonInterface()
+    {
+        foreach (AudioSource source in FindObjectsByType<AudioSource>(FindObjectsSortMode.None))
+        {
+            Time.timeScale = 1f;
+            if (!source.CompareTag("UIAudio")) 
+                source.mute = false;
+        }
+    }
 }

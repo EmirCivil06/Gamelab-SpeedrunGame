@@ -45,3 +45,14 @@
 .invis {
     opacity: 0;
 }
+
+.button {
+    width: 276px;
+    height: 126px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 30px;
+    -unity-font-definition: url("project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&guid=54b959f0c885e2b49b216b314664106b&type=3#Pixeloid2");
+}

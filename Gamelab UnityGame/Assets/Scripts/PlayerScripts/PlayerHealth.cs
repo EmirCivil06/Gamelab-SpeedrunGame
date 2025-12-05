@@ -23,12 +23,6 @@ public class PlayerHealth : MonoBehaviour
 
     [SerializeField]
     private UnityEvent onPlayerRespawned;
-
-    [Header("Fields for Responsive UI")]
-    [SerializeField] private UIDocument gameUI;
-    private VisualElement healthBar;
-    [SerializeField] private Sprite full, two, one, zero;
-
     private int _currentHealth;
     private Vector3 _spawnPosition;
 
@@ -48,31 +42,9 @@ public class PlayerHealth : MonoBehaviour
 
         Instance = this;
 
-        healthBar = gameUI.rootVisualElement.Q("HealthBar");
-
         ResolvePlayerReferences();
         CacheSpawnPosition();
         uiEvents = GameObject.FindObjectOfType<MainGameUIEvents>();
-    }
-
-    void Update()
-    {
-        switch (_currentHealth)
-        {
-            case 2:
-                healthBar.style.backgroundImage = new StyleBackground(two);
-                break;
-
-            case 1:
-                healthBar.style.backgroundImage = new StyleBackground(one);
-                break;
-            case 0:
-                healthBar.style.backgroundImage = new StyleBackground(zero);
-                break;
-            default:
-                healthBar.style.backgroundImage = new StyleBackground(full);
-                break;
-        }
     }
 
     private void OnEnable()
@@ -108,8 +80,8 @@ public class PlayerHealth : MonoBehaviour
     {
         _currentHealth = Mathf.Max(1, maxHealth);
         NotifyHealthChanged();
-        var activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.buildIndex);
+        uiEvents.ChangeToGameOver();
+        PauseNonInterface();
     }
 
     public void SetSpawnPoint(Vector3 position)
@@ -192,4 +164,16 @@ public class PlayerHealth : MonoBehaviour
             playerRigidbody = playerTransform.GetComponent<Rigidbody2D>();
         }
     }
+
+    private void PauseNonInterface()
+    {
+        foreach (AudioSource source in FindObjectsByType<AudioSource>(FindObjectsSortMode.None))
+        {
+            Time.timeScale = 0f;
+            if (!source.CompareTag("UIAudio")) 
+                source.mute = true;
+        }
+    }
+
+
 }
