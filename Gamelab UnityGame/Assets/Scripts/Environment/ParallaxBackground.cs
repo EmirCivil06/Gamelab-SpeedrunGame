@@ -2,25 +2,30 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
-    public Vector2 parallaxSpeed;
-
-    private Material mat;
-    private Transform cam;
-    private Vector3 lastPos;
-    private Vector2 offset;
+    private float length, startpos;
+    public GameObject cam;
+    public float parallaxEffect; // 0 ile 1 arasý (1: Gökyüzü)
 
     void Start()
     {
-        cam = Camera.main.transform;
-        lastPos = cam.position;
-        mat = GetComponent<SpriteRenderer>().material;
+        startpos = transform.position.x;
+        length = GetComponent<SpriteRenderer>().bounds.size.x;
+
+        if (cam == null)
+        {
+            cam = Camera.main.gameObject;
+        }
     }
 
-    void LateUpdate()
+    void Update()
     {
-        Vector3 delta = cam.position - lastPos;
-        offset += new Vector2(delta.x * parallaxSpeed.x, delta.y * parallaxSpeed.y);
-        mat.mainTextureOffset = offset;
-        lastPos = cam.position;
+        float temp = (cam.transform.position.x * (1 - parallaxEffect));
+        float dist = (cam.transform.position.x * parallaxEffect);
+        float distY = cam.transform.position.y * parallaxEffect;
+
+        transform.position = new Vector3(startpos + dist, distY, transform.position.z);
+
+        if (temp > startpos + length) startpos += length;
+        else if (temp < startpos - length) startpos -= length;
     }
 }
