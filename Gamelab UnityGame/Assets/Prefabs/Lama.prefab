@@ -336,7 +336,7 @@ MonoBehaviour:
     m_Interactions: 
     m_SingletonActionBindings: []
     m_Flags: 0
-  moveSpeed: 9
+  moveSpeed: 10
   jumpForce: 16
   inputX: 0
 --- !u!114 &3604447258272586115
