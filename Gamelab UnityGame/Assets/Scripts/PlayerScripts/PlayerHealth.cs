@@ -21,23 +21,22 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField]
     private bool resetVelocityOnRespawn = true;
 
-    [Header("Events")]
-    [SerializeField]
-    private UnityEvent<int> onHealthChanged;
-
     [SerializeField]
     private UnityEvent onPlayerRespawned;
 
     [Header("Fields for Responsive UI")]
     [SerializeField] private UIDocument gameUI;
     private VisualElement healthBar;
-    [SerializeField] private Sprite full, two, one;
+    [SerializeField] private Sprite full, two, one, zero;
 
     private int _currentHealth;
     private Vector3 _spawnPosition;
 
     public int CurrentHealth => _currentHealth;
     public int MaxHealth => maxHealth;
+    
+
+    public MainGameUIEvents uiEvents;
 
     private void Awake()
     {
@@ -53,6 +52,7 @@ public class PlayerHealth : MonoBehaviour
 
         ResolvePlayerReferences();
         CacheSpawnPosition();
+        uiEvents = GameObject.FindObjectOfType<MainGameUIEvents>();
     }
 
     void Update()
@@ -60,16 +60,18 @@ public class PlayerHealth : MonoBehaviour
         switch (_currentHealth)
         {
             case 2:
-            healthBar.style.backgroundImage = new StyleBackground(two);
-            break;
+                healthBar.style.backgroundImage = new StyleBackground(two);
+                break;
 
             case 1:
-            healthBar.style.backgroundImage = new StyleBackground(one);
-            break;
-
+                healthBar.style.backgroundImage = new StyleBackground(one);
+                break;
+            case 0:
+                healthBar.style.backgroundImage = new StyleBackground(zero);
+                break;
             default:
-            healthBar.style.backgroundImage = new StyleBackground(full);
-            break;
+                healthBar.style.backgroundImage = new StyleBackground(full);
+                break;
         }
     }
 
@@ -142,7 +144,11 @@ public class PlayerHealth : MonoBehaviour
 
     private void NotifyHealthChanged()
     {
-        onHealthChanged?.Invoke(_currentHealth);
+        //onHealthChanged?.Invoke(_currentHealth);
+        if (EnsureUIEventsReference())
+        {
+            uiEvents.UpdateHealth(_currentHealth);
+        }
         if (_currentHealth <= 0)
         {
             Debug.Log("Game Over");
@@ -158,6 +164,16 @@ public class PlayerHealth : MonoBehaviour
         {
             _spawnPosition = playerTransform.position;
         }
+    }
+
+    private bool EnsureUIEventsReference()
+    {
+        if (uiEvents == null)
+        {
+            uiEvents = FindObjectOfType<MainGameUIEvents>();
+        }
+
+        return uiEvents != null;
     }
 
     private void ResolvePlayerReferences()

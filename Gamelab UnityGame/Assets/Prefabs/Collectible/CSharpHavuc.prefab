@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Collectible
   scoreValue: 1
+  _animator: {fileID: 3584121264125565561}
 --- !u!95 &3584121264125565561
 Animator:
   serializedVersion: 7

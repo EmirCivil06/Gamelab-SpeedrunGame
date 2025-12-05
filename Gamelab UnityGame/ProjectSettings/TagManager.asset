@@ -12,6 +12,7 @@ TagManager:
   - UI
   - Collectible
   - Background
+  - Boss
   layers:
   - Default
   - TransparentFX
