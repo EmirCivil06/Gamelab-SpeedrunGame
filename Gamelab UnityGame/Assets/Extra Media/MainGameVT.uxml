@@ -23,4 +23,20 @@
             </ui:VisualElement>
         </ui:VisualElement>
     </ui:VisualElement>
+    <ui:VisualElement name="PauseMenu" focusable="true" class="transition invis" style="flex-grow: 1; position: absolute; top: 0; right: 0; left: 0; bottom: 0; background-color: rgba(0, 0, 0, 0.51); align-self: center; align-items: center; justify-content: space-evenly; align-content: center;">
+        <ui:VisualElement name="PauseContent" style="flex-grow: 0.6; align-items: center; justify-content: space-evenly; align-self: center; align-content: center; width: 50%; height: 25%; background-color: rgb(255, 0, 111); border-left-color: rgb(255, 105, 180); border-right-color: rgb(255, 105, 180); border-top-color: rgb(255, 105, 180); border-bottom-color: rgb(255, 105, 180); border-top-width: 10px; border-right-width: 10px; border-bottom-width: 10px; border-left-width: 10px; border-top-left-radius: 60px; border-top-right-radius: 60px; border-bottom-right-radius: 60px; border-bottom-left-radius: 60px;">
+            <ui:Label text="Durdurdunuz" name="YouPaused" style="font-size: 50px; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); color: rgb(255, 255, 255);" />
+            <ui:Slider label="Ses" value="6" high-value="6" data-source="project://database/Assets/Scripts/ScriptableObjects/Settings%20Data%20SO.asset?fileID=11400000&amp;guid=8a168520d620bc64d956f49aa58f45f1&amp;type=2#Settings Data SO" name="SFX" style="width: 700px; font-size: 40px; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); align-self: center; align-content: center; color: rgb(255, 255, 255);">
+                <Bindings>
+                    <ui:DataBinding property="value" data-source-path="sfxVolume" binding-mode="TwoWay" />
+                </Bindings>
+            </ui:Slider>
+            <ui:Slider label="Müzik" value="42" high-value="6" name="Music" data-source="project://database/Assets/Scripts/ScriptableObjects/Settings%20Data%20SO.asset?fileID=11400000&amp;guid=8a168520d620bc64d956f49aa58f45f1&amp;type=2#Settings Data SO" style="align-self: center; align-content: center; width: 700px; -unity-font-definition: url(&quot;project://database/Assets/Extra%20Media/Pixeloid2.ttf?fileID=12800000&amp;guid=54b959f0c885e2b49b216b314664106b&amp;type=3#Pixeloid2&quot;); font-size: 40px; color: rgb(255, 255, 255);">
+                <Bindings>
+                    <ui:DataBinding property="value" data-source-path="musicVolume" binding-mode="TwoWay" />
+                </Bindings>
+            </ui:Slider>
+            <ui:Button name="Continue" class="button" style="background-color: rgba(188, 188, 188, 0); border-top-width: 0; border-right-width: 0; border-bottom-width: 0; border-left-width: 0; background-image: url(&quot;project://database/Assets/Sprites/pixil-frame-0%20(12).png?fileID=-5221766087556173553&amp;guid=d342ac8b8e3042143956665ba724bf74&amp;type=3#pixil-frame-0 (12)_8&quot;);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
 </ui:UXML>
