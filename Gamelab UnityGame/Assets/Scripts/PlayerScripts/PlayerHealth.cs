@@ -178,7 +178,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.name == "Çukur")
+        if (other.gameObject.name == "Çukur" || other.gameObject.name == "Deniz")
         {
             TakeDamage(1);
         }
